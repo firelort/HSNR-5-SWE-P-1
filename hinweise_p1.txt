@@ -1,0 +1,51 @@
+SWE-Praktikum: Hinweise P1
+
+- Aufwandsschätzung
+- fachliche Anforderungen
+
+FP-Methode:
+- Elementarprozesse
+   -> fachlichen Hinweise weiter analysieren!
+   -> Beschreiben hilft!
+   -> fachlich erkennbaren Daten/Datenstrukturen angeben!
+
+- interne Datenbestände / Referenzdaten
+   -> interne DB: die unmittelbaren Daten der Anwendung
+   -> Referenzdaten: Daten (die auf irgendeinem Weg) genutzt werden
+
+Fachliche Anforderungen:
+
+- Use-Case-Modellierung
+   - funktionale Betrachtung
+   - Use-Cases ergeben sich ansatzweise aus den Elementarprozessen
+   - Funktionalität beschreiben: aktiv ausdrücken mit Vollverb
+      - spezifisch: das handelnde Subjekt genauer angeben
+   - UC-Namen: " ... und ..." deutet die Notwendigkeit einer Zerlegung an
+   - UC-Beschreibungen:
+       -> Vor-/Nachbedingungen: Systemzustände!
+   - IDB der FP-Analyse: nur indirekt als Austausch zu den Akteuren bei den einzelnen Use-Cases
+   - Referenzdaten: ggf. Schnittstellen zu Nachbarsystemen, die als Akteure auftreten
+
+- fachliches (!) Klassendiagramm
+   - ausgehend von den bei der FP-Analyse erkannten Daten/Datenstrukturen angeben
+      -> fachliche Einheiten in Form von Klassen
+      -> Beziehungen zwischen diesen Einheiten
+          - Generalisierung / Spezialisierung    => wird bisher kaum genutzt
+          - Assoziationen                        => wird bisher kaum genutzt
+              -> das ist der Normalfall
+              -> Multiplizitäten angeben auf beiden Seiten einer Beziehung!
+              -> benennen inkl. Richtung, Rollen können angegeben werden
+          - Aggregationen
+              -> Teil-Ganzes-Beziehungen
+              -> existenzunabhängig
+              -> sehr beliebt aufgrund eines Missverständnisses
+                 1. es wird an Implementierung gedacht
+                 2. man nimmt (fälschlich) an, dass man die Beziehung mit Attributen
+                    modellieren muss
+          - Komposition:
+              -> strengere Form: Existenzabhängigkeit!
+   - fachliche Attribute
+   - fachliche Funktionen, soweit erkennbar
+
+- Leistungsanforderungen:
+   - geben Sie Zahlen an!
