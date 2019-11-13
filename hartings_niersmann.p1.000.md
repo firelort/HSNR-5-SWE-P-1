@@ -71,7 +71,7 @@ absolventen_in ::= @absolvent_ex + passwort + teilnahmestatus + anzahlBegleitper
 
 mitarbeiter ::= name + vorname + #email;
 
-TODO zugangsdaten ::= 
+zugangsdaten ::= name + vorname + #email + passwort;
 
 name ::= string;  
 datum ::= date;  
