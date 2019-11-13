@@ -20,21 +20,73 @@ cssextra: doc1.css
 
 ## Zusammenstellung und Klassifizierung der Elementarprozesse
 
-Geben Sie die Elementarprozesse an und beschreiben Sie diese. Ordnen Sie die Elementarprozesse den Kategorien zu.
-
 ### Ausgaben
 
-### Abfragen
+Prüfungsausschuss:
+* Teilnehmerliste der Absolventen
+* Teilnehmerliste der Mitarbeiter
+* Auflistung der Abschlussarbeiten
+* Prüfer des Studenten
+
+Alle: 
+* Informationen der Absolventenfeier 
 
 ### Eingaben
 
-## Daten
+Absolventen:
+* Passwort setzen
+* Teilnahmestatus ändern 
+* Anzahl der Begleitpersonen ändern
 
-Benennen Sie Datenbestände und beschreiben Sie diese mit dem "Data-Dictionary"-Ansatz.
+Mitarbeiter:
+* Teilnahme bekunden
+
+Prüfungsausschuss:
+* Registrierung am ASF
+* Absolventenfeier anlegen
+* Absolventenfeier bearbeiten
+
+## Daten
 
 ### Interne Datenbestände
 
+* Weitere Absolventen-Informationen
+* Teilnehmer Mitarbeiter
+* Informationen Abschlussfeier
+* Zugangsdaten Prüfungsausschuss
+
 ### Referenzdaten
+
+* Absolventenliste vom Prüfungsamt
+
+Diese Daten beinhalten den Namen, den Vornamen, die E-Mail sowie Informationen zur Abschlussarbeit (Titel, Art und Prüfer).
+
+### Data Dictionary
+
+feier ::= name + #datum + uhrzeit + ort;
+
+absolventen_ex ::= name + vorname + #email + arbeitstitel + arbeitstyp + pruefer1 + pruefer2;
+
+absolventen_in ::= @absolvent_ex + passwort + teilnahmestatus + anzahlBegleitperson;
+
+mitarbeiter ::= name + vorname + #email;
+
+name ::= string;  
+datum ::= date;  
+uhrzeit ::= time;  
+ort ::= string;  
+
+vorname ::= string;  
+email ::= string;  
+arbeitstitel  ::= string;  
+arbeitstyp ::= [' Bachelor '|' Master '];  
+pruefer1 ::= string;  * Professor *   
+pruefer2 ::= string;  * FB Mitarbeiter und != Pruefer1 *  
+
+passwort ::= string; * leer bei unregistreren Absolventen *  
+teilnehmerstatus ::= boolean; * Standard ist false *  
+anzahlBegleitperson ::= number;  
+
 
 ## Komplexität / Berechnung der unbewerteten FP
 
