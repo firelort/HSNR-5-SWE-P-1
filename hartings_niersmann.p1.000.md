@@ -71,6 +71,8 @@ absolventen_in ::= @absolvent_ex + passwort + teilnahmestatus + anzahlBegleitper
 
 mitarbeiter ::= name + vorname + #email;
 
+zugangsdaten ::= name + vorname + #email + passwort;
+
 name ::= string;  
 datum ::= date;  
 uhrzeit ::= time;  
@@ -90,42 +92,40 @@ anzahlBegleitperson ::= number;
 
 ## Komplexität / Berechnung der unbewerteten FP
 
-Wenden Sie die Zählregeln an und ermitteln Sie anhand der Tabelle die unbewertete Summe der FP.
-
 +-----------------------+--------+----------------+------------+------+
 | Kategorie             | Anzahl | Klassifzierung | Gewichtung | Wert |
 +=======================+========+================+============+======+
-| Eingaben              |        | einfach        |            |      |
+| Eingaben              |   7    | einfach        |     3      |  21  |
 +-----------------------+--------+----------------+------------+------+
-| Eingaben              |        | mittel         |            |      |
+| Eingaben              |   0    | mittel         |     4      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Eingaben              |        | komplex        |            |      |
+| Eingaben              |   0    | komplex        |     6      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Ausgaben              |        | einfach        |            |      |
+| Ausgaben              |   4    | einfach        |     4      |  16  |
 +-----------------------+--------+----------------+------------+------+
-| Ausgaben              |        | mittel         |            |      |
+| Ausgaben              |   1    | mittel         |     5      |   5  |
 +-----------------------+--------+----------------+------------+------+
-| Ausgaben              |        | komplex        |            |      |
+| Ausgaben              |   0    | komplex        |     7      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Abfragen              |        | einfach        |            |      |
+| Abfragen              |   0    | einfach        |     3      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Abfragen              |        | mittel         |            |      |
+| Abfragen              |   0    | mittel         |     4      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Abfragen              |        | komplex        |            |      |
+| Abfragen              |   0    | komplex        |     6      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Interne Datenbestände |        | einfach        |            |      |
+| Interne Datenbestände |   4    | einfach        |     7      |  28  |
 +-----------------------+--------+----------------+------------+------+
-| Interne Datenbestände |        | mittel         |            |      |
+| Interne Datenbestände |   0    | mittel         |    10      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Interne Datenbestände |        | komplex        |            |      |
+| Interne Datenbestände |   0    | komplex        |    15      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Referenzdaten         |        | einfach        |            |      |
+| Referenzdaten         |   1    | einfach        |     5      |   5  |
 +-----------------------+--------+----------------+------------+------+
-| Referenzdaten         |        | mittel         |            |      |
+| Referenzdaten         |   0    | mittel         |     7      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Referenzdaten         |        | komplex        |            |      |
+| Referenzdaten         |   0    | komplex        |    10      |   0  |
 +-----------------------+--------+----------------+------------+------+
-| Summe                 |        |                |            |      |
+| Summe                 |  16    |                |            |  75  |
 +-----------------------+--------+----------------+------------+------+
 
 ## Berechnung der bewerteten FP
@@ -138,38 +138,75 @@ Wenden Sie die passenden Einflussfaktoren an.
 
 14 allgemeine Systemmerkmale, mit denen die allgemeine Funktionalität einer Anwendung klassifiziert wird:
 
-1.  Datenkommunikation
-2.  Verteilte Verarbeitung
-3.  Leistungsfähigkeit
-4.  Begrenzte Kapazität
-5.  Transaktionsrate
-6.  Interaktive Dateneingabe
-7.  Benutzerfreundlichkeit
-8.  Interaktive Änderung
-9.  Komplexe Verarbeitung
-10.  Wiederverwendbarkeit
-11.  Installationshilfen
-12.  Betriebshilfen
-13.  Mehrfachinstallation
-14.  Änderungsfreundlichkeit.
++--------------------------------+-----------------------------+
+| Systemmerkmal                  |   Gewichtung                |
++================================+=============================+
++--------------------------------+-----------------------------+
+| 1.  Datenkommunikation         |                 5           |
++--------------------------------+-----------------------------+
+| 2.  Verteilte Verarbeitung     |                 0           |
++--------------------------------+-----------------------------+
+| 3.  Leistungsfähigkeit         |                 1           |
++--------------------------------+-----------------------------+
+| 4.  Begrenzte Kapazität        |                 1           |
++--------------------------------+-----------------------------+
+| 5.  Transaktionsrate           |                 4           |
++--------------------------------+-----------------------------+
+| 6.  Interaktive Dateneingabe   |                 4           |
++--------------------------------+-----------------------------+
+| 7.  Benutzerfreundlichkeit     |                 3           |
++--------------------------------+-----------------------------+
+| 8.  Interaktive Änderung       |                 3           |
++--------------------------------+-----------------------------+
+| 9.  Komplexe Verarbeitung      |                 1           |
++--------------------------------+-----------------------------+
+| 10.  Wiederverwendbarkeit      |                 0           |
++--------------------------------+-----------------------------+
+| 11.  Installationshilfen       |                 0           |
++--------------------------------+-----------------------------+
+| 12.  Betriebshilfen            |                 0           |
++--------------------------------+-----------------------------+
+| 13.  Mehrfachinstallation      |                 0           |
++--------------------------------+-----------------------------+
+| 14.  Änderungsfreundlichkeit   |                 0           |
++--------------------------------+-----------------------------+
 
 #### Einflussgrade (DI/Degree of influence)
 
-- für jedes Merkmal
-- auf einer Skala von 0 (kein Einfluss) bis 5 (starker Einfluss)
-- Gesamteinflussgrad (TDI, engl. Total degree of influence): Summe der 14 Werte
-- VAF berechnet sich dann anhand folgender Formel: VAF = (TDI * 0.01) + 0.65
-- VAF maximal 1,35 bzw. minimal 0,65
+Formel zur Berechnung des Einflussgrades:
+```
+Skala von 0 (kein Einfluss) bis 5 (starker Einfluss)
+Gesamteinflussgrad (TDI, engl. Total degree of influence): Summe der 14 Werte
+VAF berechnet sich dann anhand folgender Formel: VAF = (TDI * 0.01) + 0.65
+
+AFP (Adjusted FP Count) = VAF * UFP (Unadjusted FP)
+```
+
+Resultat:
+```
+TDI = 5 + 1 + 1 + 4 + 4 + 3 + 3 + 1 = 22
+VAF = (22 * 0.01) + 0.65 = 0.87
+AFP = 0.87 * 75 = 65.25
+```
 
 ## Ermittlung Personalaufwand, Bearbeitungsdauer, Kosten
 
+Formel zur Ermittlung des Personalaufwand:
+```
 Zur Abschätzung des Entwicklungsaufwands in Personenmonaten gibt es in der Literatur u.a. folgende Formel:
-
 - Aufwand (Personenmonate) = FP^1.4^ / 150
+```
 
-Dabei geben bei Sie bei FP die bewerteten Function-Points an.
+Aufwand in Personenmonate = `65.25^(1.4) / 150 = 2.166 ~ 3`
 
-Geben Sie danach an, welcher Bearbeitungszeitraum und welche Projektkosten sich daraus nach Ihrer Meinung ergeben. Begründen Sie Ihre Ausführungen.
+Formel zur Berechnung der Kosten:
+```
+Projektkosten = Personenmonate * Gehalt * 2
+```
+
+Die Projektkosten belaufen sich auf `3 * 45000€ * 2 = 27000 €`
+
+Das Projekt sollte von zwei Personen in 1.5 Monaten durchgeführt werden.
 
 # TEIL II: Anforderungsanalyse {.unnumbered .clDocPartHeader}
 
