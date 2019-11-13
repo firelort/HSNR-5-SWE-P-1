@@ -5,6 +5,7 @@
 * absolventen meta infos referenziert zu absolvent von prufüngsamt
 * teilnehmer (mitarbeiter) 
 * information zur feier 
+* prüfungsausschuss zugangsdaten
 
 **externe db**
  
@@ -17,23 +18,21 @@
 * registrierung (passwort erstellen nach eingabevon email) absolventen
 * anzahl begleitperson ändern absolvent
 * mitarbeiter registrieren 
-* 
 
 ---
 **alles für prufungsausschluss**
 
+* Registrierung am System
 * anmelden
-* absolventen löschen
-* absolventen editieren
-* absolventen löschen
-* zuweisung prüfer
 * feierinfos
 
 
 **ausgang**
 
-* teilnehmerliste absolventen prüfungausschluss
-* liste der abschlussarbeiten prüfungsausschluss 
+* teilnehmerliste absolventen prüfungausschuss
+* teilnehmerliste Mitarbeiter prüfungsauschuss
+* liste der abschlussarbeiten prüfungsausschuss
+* Prüfer des Students prüfungsausschuss
 * infos zur feier 
 
 
