@@ -14,26 +14,28 @@
 
 **eingang**
 
-* anmeldung/stornierung absolventen
-* registrierung (passwort erstellen nach eingabevon email) absolventen
-* anzahl begleitperson ändern absolvent
-* mitarbeiter registrieren 
+* anmeldung/stornierung absolventen einfach 
+* registrierung (passwort erstellen nach eingabevon email) absolventen einfach 
+* anzahl begleitperson ändern absolvent einfach 
+* mitarbeiter registrieren  mittel
 
 ---
 **alles für prufungsausschluss**
 
-* Registrierung am System
-* anmelden
-* feierinfos
+* Registrierung am System mittel
+* anmelden einfach
+* feierinfos mittel
+absolventenfeier anlegen niedrig
+absolventenfeier bearbeiten niedrig
 
 
 **ausgang**
 
-* teilnehmerliste absolventen prüfungausschuss
-* teilnehmerliste Mitarbeiter prüfungsauschuss
-* liste der abschlussarbeiten prüfungsausschuss
-* Prüfer des Students prüfungsausschuss
-* infos zur feier 
+* teilnehmerliste absolventen prüfungausschuss mittel
+* teilnehmerliste Mitarbeiter prüfungsauschuss einfach
+* liste der abschlussarbeiten prüfungsausschuss einfach
+* Prüfer des Students prüfungsausschuss einfach 
+* infos zur feier einfach 
 
 
 
@@ -43,7 +45,7 @@ professoren aus externe db
 
 ## datenstruktur
 
-feier ::= name + #datum + uhrzeit + ort;
+feier ::= name + #datum + uhrzeit + ort; 
 
 absolventen_ex ::= name + vorname + #email + arbeitstitel + arbeitstyp + pruefer1 + pruefer2;
 
