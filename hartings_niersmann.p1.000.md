@@ -63,6 +63,7 @@ Diese Daten beinhalten den Namen, den Vornamen, die E-Mail sowie Informationen z
 
 ### Data Dictionary
 
+```
 feier ::= name + #datum + uhrzeit + ort;
 
 absolventen_ex ::= name + vorname + #email + arbeitstitel + arbeitstyp + pruefer1 + pruefer2;
@@ -88,6 +89,7 @@ pruefer2 ::= string;  * FB Mitarbeiter und != Pruefer1 *
 passwort ::= string; * leer bei unregistreren Absolventen *  
 teilnehmerstatus ::= boolean; * Standard ist false *  
 anzahlBegleitperson ::= number;  
+```
 
 
 ## Komplexität / Berechnung der unbewerteten FP
@@ -127,6 +129,8 @@ anzahlBegleitperson ::= number;
 +-----------------------+--------+----------------+------------+------+
 | Summe                 |  16    |                |            |  75  |
 +-----------------------+--------+----------------+------------+------+
+
+Ausgabe mittel: `Teilnehmerlist der Absolventen`, da dort auf zwei Datenbestände zugegriffen wird und die Summe der Datenfelder zwischen 5 und 15 liegt.
 
 ## Berechnung der bewerteten FP
 
@@ -212,21 +216,40 @@ Das Projekt sollte von zwei Personen in 1.5 Monaten durchgeführt werden.
 
 # Zielbestimmung
 
-Geben Sie die Ziele an, die mit der Entwicklung verfolgt werden
+Der Prüfungsausschuss soll mit Hilfe der beschrieben Anwendung die Absolventenfeier verwalten können.
+Die Mitglieder des Prüfungsausschuss können die Informationen der Abschlussfeier (ein-)pflegen sowie eine aktuelle Teilnehmerliste abrufen
+Mitarbeitern des Fachbereichs und Absolventen können sich über die hier beschriebene Anwendung zur Absolventenfeier anmelden.
 
 # Produkt-Einsatz    
 
 ## Anwendungsbereiche
 
-Definieren Sie, in welchen Bereichen / wie das Produkt eingesetzt werden soll
+Die beschriebene software Lösung soll im Universitätsumfeld genutzt werden um eine Verwaltung von Absolventenfeiern zu ermöglichen.
 
 ## Zielgruppen
 
-Geben Sie die Zielgruppen an und charakterisieren Sie die unterschiedlichen Rollen, die eingenommen werden
+Die beschriebene Anwendung richtet sich an drei Zielgruppen.
+
+#### 1. Absolventen
+
+Die Absolventen geben an, ob und mit wie vielen Begleitpersonen diese an der Absolventenfeier teilnehmen möchten.
+
+#### 2. Mitarbeiter des Fachbereichs
+
+Zu den Mitarbeitern des Fachbereichs zählen neben den Professoren auch alle anderen Angestellten, welche am Fachbereich tätig sind.
+Diese können sich mit Hilfe der Anwendung auch an der Absolventenfeier anmelden.
+
+#### 3. Mitglieder des Prüfungsausschuss
+
+Die gewählten Mitglieder des Prüfungsausschusses stehen die selben Funktionen zur Verfügung, wie den Mitarbeitern des Fachbereichs.
+Ihr Handlungsspielraum wird ergänzt durch die Möglichkeiten der Organisation der Absolventenfeier sowie einer Ausgabe von angemeldeten Gästen und eine Aufstellung der Bachelorarbeiten.
 
 ## Betriebsbedingungen
 
-Geben Sie außergewöhnliche Betriebsbedingungen an (z.B. Besonderheiten in einem industriellen Umfeld)
+Die Anwendung soll (nur) im Intranet der Hochschule Niederrhein genutzt werden.
+Damit die Anwendung ordnungsgemäß arbeiten kann, benötigt die beschriebene Anwendung die externen Daten des Prüfungsamtes.
+
+Diese Daten müssen den Namen, den Vorname, die E-Mail-Adresse, den Titel der Arbeit, den Typ der Abschlussarbeit sowie den erst und zweit Prüfer enthalten. 
 
 # Produkt-Umgebung
 
@@ -234,11 +257,14 @@ Charakterisieren Sie wesentliche Aspekte der dv-technischen Umgebung des Produkt
 
 ## Software
 
-Geben Sie hier beispielsweise an, welche Software zum Betrieb der Anwendung zwingend erforderlich ist. Gehen Sie auf Besonderheiten ein, die über allgemein übliche Anforderungen hinausgehen.
+Die benötigte Software ist abhängig von dem genutzten Framework. Eine Spezifizierung wird daher nicht vorgenommen.
 
 ## Hardware
 
-Geben Sie hier beispielsweise an, welche Hardware zum Betrieb der Anwendung zwingend erforderlich ist. Gehen Sie auf Besonderheiten ein, die über allgemein übliche Anforderungen hinausgehen.
+Zum Betreiben der Anwendung wird keine spezielle Hardware benötigt.
+
+Da eine Verbindung zum Intranet der Hochschule benötigt wird und die Anwendung auf externe Daten zugreift, wird ein LAN-Adapter benötigt.
+Dieser sollte jedoch Standard in allen Servern sein.
 
 # Funktionale Produkt-Anforderungen
 
