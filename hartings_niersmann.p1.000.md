@@ -251,7 +251,7 @@ Diese Daten müssen den Namen, den Vorname, die E-Mail-Adresse, den Titel der Ar
 
 # Produkt-Umgebung
 
-Charakterisieren Sie wesentliche Aspekte der dv-technischen Umgebung des Produkts; gehen Sie dabei insbesondere die (fachlichen / dv-technischen) Schnittstellen zu anderen Produkten an
+Die Anwendung benötigt eine Schnittstelle zu dem Datenbestand des Prüfungsamtes um so den externen Dantenbestand zu erhalten.
 
 ## Software
 
@@ -261,8 +261,7 @@ Es wird ein Webserver benötigt sowie eine NoSQL-Datenbank-Software.
 
 Zum Betreiben der Anwendung wird keine spezielle Hardware benötigt.
 
-Da eine Verbindung zum Intranet der Hochschule benötigt wird und die Anwendung auf externe Daten zugreift, wird ein LAN-Adapter benötigt.
-Dieser sollte jedoch Standard in allen Servern sein.
+Da eine Verbindung zum Intranet der Hochschule benötigt wird und die Anwendung auf externe Daten zugreift, wird ein Netzwerk-Adapter benötigt.
 
 # Funktionale Produkt-Anforderungen
 
