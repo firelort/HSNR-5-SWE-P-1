@@ -134,8 +134,6 @@ Ausgabe mittel: `Teilnehmerlist der Absolventen`, da dort auf zwei Datenbeständ
 
 ## Berechnung der bewerteten FP
 
-Wenden Sie die passenden Einflussfaktoren an.
-
 ### Einflußfaktor (VAF/Value adjustment factor)
 
 #### Systemmerkmale
@@ -249,7 +247,7 @@ Ihr Handlungsspielraum wird ergänzt durch die Möglichkeiten der Organisation d
 Die Anwendung soll (nur) im Intranet der Hochschule Niederrhein genutzt werden.
 Damit die Anwendung ordnungsgemäß arbeiten kann, benötigt die beschriebene Anwendung die externen Daten des Prüfungsamtes.
 
-Diese Daten müssen den Namen, den Vorname, die E-Mail-Adresse, den Titel der Arbeit, den Typ der Abschlussarbeit sowie den erst und zweit Prüfer enthalten. 
+Diese Daten müssen den Namen, den Vorname, die E-Mail-Adresse, den Titel der Arbeit, den Typ der Abschlussarbeit sowie den Erst- und Zweitprüfer enthalten. 
 
 # Produkt-Umgebung
 
@@ -257,7 +255,7 @@ Charakterisieren Sie wesentliche Aspekte der dv-technischen Umgebung des Produkt
 
 ## Software
 
-Die benötigte Software ist abhängig von dem genutzten Framework. Eine Spezifizierung wird daher nicht vorgenommen.
+Es wird ein Webserver benötigt sowie eine NoSQL-Datenbank-Software.
 
 ## Hardware
 
@@ -276,28 +274,284 @@ Beschreiben Sie die Anwendungsfälle mit UML-Anwendungsfalldiagrammen und geben 
 
 Geben Sie für jeden Fall eine Beschreibung in folgender Form an:
 
-:(Anwendungsfall) 
+:(Teilnahme Bekunden) 
 
 +----------------------+-----------------------------------------------------------------------------+
-|     Bezeichnung      |                        _konsistent zum UML-Diagramm_                        |
+|     Bezeichnung      |                                                                             |
 +======================+=============================================================================+
-| Ziel                 | _beschreiben Sie das Ziel des Anwendungsfalls_                              |
+| Ziel                 | Mitarbeiter ist zur Absolventenfeier angemeldet                             |
 +----------------------+-----------------------------------------------------------------------------+
-| Akteure              | _geben Sie die Akteure an_                                                  |
+| Akteure              | Mitarbeiter, Prüfungsausschuss                                              |
 +----------------------+-----------------------------------------------------------------------------+
-| Auslösendes Ereignis | _warum wird der Anwendungsfall durchgeführt_                                |
+| Auslösendes Ereignis | Mitarbeiter möchten an der Feier teilnehmen                                 |
 +----------------------+-----------------------------------------------------------------------------+
-| Vorbedingung         | _Systemzustand, der vor der Ausführung des Anwendungsfalls vorliegen muss_  |
+| Vorbedingung         | Absolventenfeier angelegt                                                   |
 +----------------------+-----------------------------------------------------------------------------+
-| Nachbedingung        | _neuer Systemzustand, der nach der Ausführung des Anwendungsfalls vorliegt_ |
-|                      | _(keine Angabe, wenn es keine neuen Systemzustand gibt)_                     |
+| Nachbedingung        | Mitarbeiter/Prüfungsausschuss zur Absolventenfeier angemeldet               |
 +----------------------+-----------------------------------------------------------------------------+
-| Kategorie            | _primär, sekundär oder optional_                                            |
+| Kategorie            | primär                                                                      |
 +----------------------+-----------------------------------------------------------------------------+
-| Beschreibung         | _beschreibender Text_                                                       |
+| Beschreibung         | Mitarbeiter und Prüfungsausschuss bekunden ihre Teilnahme an der            |
+|                      | Absolventenfeier                                                            |
 +----------------------+-----------------------------------------------------------------------------+
 
-Achten Sie auf die Konsistenz der Bezeichnung der Anwendungsfälle zum UML-Anwendungsfalldiagramm.
+
+:(am AFS registrieren) 
+TODO: wechseln auf Mitarbeiter? siehe letzte Übung
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Prüfungsausschuss meldet sich zum Backend des AFS an                        |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Prüfungsausschuss                                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Prüfungsausschuss möchte das Backend benutzen können                        |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         |                                                                             |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        | Neues Prüfungsausschussmitglied registirert                                 |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | sekundär                                                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         |  Ein Mirarbeiter registriert sich um zum Prüfungsausschuss zu gehören, um   |
+|                      |  dann das Backend nutzen zu können                                          |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(am AFS anmelden) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Prüfungsauschuss wird im AFS authentifiziert                                |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Prüfungsausschuss                                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Prüfungsausschuss möchte das Backend benutzen                               |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         | Im AFS registriert sein                                                     |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        |                                                                             |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | primär                                                                      |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Prüfungsamt wird im AFS angemeldet und kann das Backend benutzen            |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(Absolventenfeier anlegen) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Eine neue Absolventenfeier anlegen                                          |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Prüfungsausschuss                                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Eine neue Absolventenfeier findet statt und muss angelegt werden            |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         | im AFS als Prüfungsausschuss angemeldet                                     |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        | neue Absolventenfeier angelegt                                              |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | primär                                                                      |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Der Prüfungsausschuss legt eine neue Absolventenfeier an                    |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(Absolventenfeier bearbeiten) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Ändern der Daten einer Absolventenfeier                                     |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Prüfungsausschuss                                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Daten einer Absolventenfeier sollen geändert werden                         |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         | Absolventenfeier angelegt                                                   |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        | Die neuen Absolventenfeierdaten wurden übernommen                           |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | sekundär                                                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Die Daten einer Absolventenfeier werden geändert                            |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(Mitarbeiter anzeigen) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | List einsehen der zur Absolventenfeier angemeldeten Mitarbeiter             |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Prüfungsausschuss                                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Mitarbeiter die angemeldet sind einsehen wollen                             |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         | im AFS als Prüfungsausschuss angemeldet                                     |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        |                                                                             |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | optional                                                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Die Mitarbeiter, die an der Absolventenfeier angemeldet sind werden         |
+|                      | eingesehen                                                                  |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(Absolventen anzeigen) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | List einsehen der zur Absolventenfeier angemeldeten Absolventen             |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Prüfungsausschuss                                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Absolventen die angemeldet sind einsehen wollen                             |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         | im AFS als Prüfungsausschuss angemeldet                                     |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        |                                                                             |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | sekundär                                                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Die Absolventen, die an der Absolventenfeier angemeldet sind werden         |
+|                      | eingesehen                                                                  |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(Abschlussarbeiten anzeigen) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Die Abschlussarbeiten einsehen                             |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Prüfungsausschuss                                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Die Liste der Abschlussarbeiten einsehen                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         | Absolventen vorhanden                                                       |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        |                                                                             |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | sekundär                                                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Die Abschlussarbeiten der Absolventen lassen sich einsehen nach vorgegebenen|
+|                      | Kriterien                                                                   |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(Prüfer kontrollieren) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Prüfer einer Absolventenarbeit kontrollieren                                |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Prüfungsausschuss                                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Prüfer einer Absolventenarbeit sollen kontrolliert werden                   |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         |  Informationen zu Absolventenarbeit vorhanden                               |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        |                                                                             |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | sekundär                                                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Die Prüfer einer Absolventenarbeit können kontrolliert, sprich eingesehen   |
+|                      | werden                                                                      |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(Passwort setzen) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Das Passwort eines Absolventen wird gesetzt                                 |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Absolvent                                                                   |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Absolvent meldet sich zum ersten mal an                                     |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         |  Absolventendaten importiert                                                |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        | Der Absolvent hat ein Passwort hinterlegt                                   |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | primär                                                                      |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Der Absolvent hinterlegt für weitere Anmeldungen ein Passwort               |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(am AFS anmelden) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Absolvent meldet sich im AFS an                                             |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Absolvent                                                                   |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Der Absolvent möchte Änderungen and Daten seinen Daten vornehmen            |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         | Passwort gesetzt                                                            |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        |                                                                             |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | sekundär                                                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Der Absolvent meldet sich im AFS an um seine Daten ändern zu können         |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(Teilnahmestatus ändern) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Der Teilnahmestatus wird geändert                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Absolvent                                                                   |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Der Absolvent möchte seine Teilnahme bekunden oder stornieren               |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         | Passwort gesetzt                                                            |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        | Geänderter Teilnahmestatus                                                  |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | sekundär                                                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Der Absolvent kann seinen Teilnahmestatus ändern                            |
++----------------------+-----------------------------------------------------------------------------+
+
+
+:(Anzahl der Begleitpersonen ändern) 
+
++----------------------+-----------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                             |
++======================+=============================================================================+
+| Ziel                 | Anzahl der Begleitpersonen ändern                                           |
++----------------------+-----------------------------------------------------------------------------+
+| Akteure              | Absolvent                                                                   |
++----------------------+-----------------------------------------------------------------------------+
+| Auslösendes Ereignis | Der Absolvent möchte Begleitpersonen mitbringen oder streichen              |
++----------------------+-----------------------------------------------------------------------------+
+| Vorbedingung         | Teilnahme bekundet                                                          |
++----------------------+-----------------------------------------------------------------------------+
+| Nachbedingung        | Die Anzahl der Begleitpersonen des Absolventen wurde geändert               |
++----------------------+-----------------------------------------------------------------------------+
+| Kategorie            | sekundär                                                                    |
++----------------------+-----------------------------------------------------------------------------+
+| Beschreibung         | Die Anzahl der Begleitpersonen wird vom Absolventen geändert                |
++----------------------+-----------------------------------------------------------------------------+
+
 
 _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschnittstelle verzichtet)_
 
