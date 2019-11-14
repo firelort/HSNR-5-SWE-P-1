@@ -304,13 +304,13 @@ Teilnehmerliste anzeigen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
+      <x>1140</x>
       <y>200</y>
-      <w>630</w>
-      <h>210</h>
+      <w>300</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;190.0;610.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;280.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
@@ -356,5 +356,16 @@ Begleitpersonen ändern</panel_attributes>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;260.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1010</x>
+      <y>240</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>am AFS anmelden</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
