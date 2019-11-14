@@ -556,7 +556,103 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 
 ## Datenbasis
 
+TODO: externer datensatz auch? 
+
 Beschreiben Sie die fachlichen Anforderungen an die Struktur der Datenbasis. Gehen Sie dabei von der Datenbeschreibung aus, die Sie bei der Function-Point-Analyse erstellt haben. Verwenden Sie UML-Klassendiagramme und beschreiben Sie die einzelnen Klassen in folgender Form:
+
+:(feier)\: Zusammenstellung Attribute
+
++----------+-------+------------------------------------------------------------+
+| Attribut |  Typ  |     Beschreibung                                           |
++==========+=======+============================================================+
+| name   | string | Der Name der Feier                                        |
++----------+-------+------------------------------------------------------------+
+| datum   | date | das Datum der Feier                                      |
++----------+-------+------------------------------------------------------------+
+| uhrzeit   | time | der Zeitpunkt der Feier                                        |
++----------+-------+------------------------------------------------------------+
+| ort   | string | Der Standort der Veranstaltung                                        |
++----------+-------+------------------------------------------------------------+
+
+&nbsp;
+
+:(feier)\: Zusammenstellung Methoden
+
++----------+------------+------------------------------------------------------------+
+| Methode  |  Signatur  |     Beschreibung                                           |
++==========+============+============================================================+
+| (name)   | (signatur) | beschreibender Text                                        |
++----------+------------+------------------------------------------------------------+
+
+:(absolventen_in)\: Zusammenstellung Attribute
+
++----------+-------+------------------------------------------------------------+
+| Attribut |  Typ  |     Beschreibung                                           |
++==========+=======+============================================================+
+| absolventen_ex   | number | ID des externen Datensatzes, der zu diesen Zusatzinformationen gehört                                      |
++----------+-------+------------------------------------------------------------+
+| passwort   | string | Passwort zur Anmeldung im ASF, Leerstring wenn noch nicht erstellt                           |
++----------+-------+------------------------------------------------------------+
+| teilnahmestatus   | boolean | Teilnahmestatus, ob Teilnahme bestätigt                                      |
++----------+-------+------------------------------------------------------------+
+| anzahlBegleitperson   | number | Anzahl der Begleitpersonen des Absolventen                                   |
++----------+-------+------------------------------------------------------------+
+
+&nbsp;
+
+:(klasse )\: Zusammenstellung Methoden
+
++----------+------------+------------------------------------------------------------+
+| Methode  |  Signatur  |     Beschreibung                                           |
++==========+============+============================================================+
+| (name)   | (signatur) | beschreibender Text                                        |
++----------+------------+------------------------------------------------------------+
+
+:(mitarbeiter)\: Zusammenstellung Attribute
+
++----------+-------+------------------------------------------------------------+
+| Attribut |  Typ  |     Beschreibung                                           |
++==========+=======+============================================================+
+| name   | string | Nachname des Mitarbeiters                                        |
++----------+-------+------------------------------------------------------------+
+| vorname   | string | Vorname des Mitarbeiters                                        |
++----------+-------+------------------------------------------------------------+
+| email   | string | Email des Mitarbeiters                                       |
++----------+-------+------------------------------------------------------------+
+
+&nbsp;
+
+:(klasse )\: Zusammenstellung Methoden
+
++----------+------------+------------------------------------------------------------+
+| Methode  |  Signatur  |     Beschreibung                                           |
++==========+============+============================================================+
+| (name)   | (signatur) | beschreibender Text                                        |
++----------+------------+------------------------------------------------------------+
+
+:(zugangsdaten)\: Zusammenstellung Attribute
+
++----------+-------+------------------------------------------------------------+
+| Attribut |  Typ  |     Beschreibung                                           |
++==========+=======+============================================================+
+| name   | string | Nachname des Prüfungsausschussmitglieds                                        |
++----------+-------+------------------------------------------------------------+
+| vorname   | string | Vorname des Prüfungsausschussmitglieds                                         |
++----------+-------+------------------------------------------------------------+
+| email   | string | Email des Prüfungsausschussmitglieds                                        |
++----------+-------+------------------------------------------------------------+
+| passwort   | string | Passwort des Prüfungsausschussmitglieds                                         |
++----------+-------+------------------------------------------------------------+
+
+&nbsp;
+
+:(klasse )\: Zusammenstellung Methoden
+
++----------+------------+------------------------------------------------------------+
+| Methode  |  Signatur  |     Beschreibung                                           |
++==========+============+============================================================+
+| (name)   | (signatur) | beschreibender Text                                        |
++----------+------------+------------------------------------------------------------+
 
 :(klasse )\: Zusammenstellung Attribute
 
