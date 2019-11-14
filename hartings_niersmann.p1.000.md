@@ -11,7 +11,7 @@ revision:
    level: 0
    date: 11.11.2019
 lang: de
-cssextra: doc1.css
+cssextra: vorlage.css
 ---
 
 # TEIL I: Voruntersuchung {.unnumbered .clDocPartHeader}
@@ -265,8 +265,6 @@ Da eine Verbindung zum Intranet der Hochschule benötigt wird und die Anwendung 
 
 # Funktionale Produkt-Anforderungen
 
-Definieren Sie die Anforderungen die Funktionalität des Produkts.
-
 ## Anwendungsfälle
 
 ![UML-Diagramm für Absolventenfeiersystem](use-cases-umlet.png "use-case")
@@ -295,7 +293,6 @@ Definieren Sie die Anforderungen die Funktionalität des Produkts.
 
 
 :(am AFS registrieren) 
-TODO: wechseln auf Mitarbeiter? siehe letzte Übung
 +----------------------+-----------------------------------------------------------------------------+
 |     Bezeichnung      |                                                                             |
 +======================+=============================================================================+
@@ -388,7 +385,7 @@ TODO: wechseln auf Mitarbeiter? siehe letzte Übung
 +----------------------+-----------------------------------------------------------------------------+
 | Akteure              | Prüfungsausschuss                                                           |
 +----------------------+-----------------------------------------------------------------------------+
-| Auslösendes Ereignis | Mitarbeiter die angemeldet sind einsehen wollen                             |
+| Auslösendes Ereignis | Übersicht über an der Absolventenfeier angemeldete Mitarbeiter bekommen     |
 +----------------------+-----------------------------------------------------------------------------+
 | Vorbedingung         | im AFS als Prüfungsausschuss angemeldet                                     |
 +----------------------+-----------------------------------------------------------------------------+
@@ -410,7 +407,7 @@ TODO: wechseln auf Mitarbeiter? siehe letzte Übung
 +----------------------+-----------------------------------------------------------------------------+
 | Akteure              | Prüfungsausschuss                                                           |
 +----------------------+-----------------------------------------------------------------------------+
-| Auslösendes Ereignis | Absolventen die angemeldet sind einsehen wollen                             |
+| Auslösendes Ereignis | Übersicht über an der Absolventenfeier angemeldete Absolventen bekommen     |
 +----------------------+-----------------------------------------------------------------------------+
 | Vorbedingung         | im AFS als Prüfungsausschuss angemeldet                                     |
 +----------------------+-----------------------------------------------------------------------------+
@@ -428,7 +425,7 @@ TODO: wechseln auf Mitarbeiter? siehe letzte Übung
 +----------------------+-----------------------------------------------------------------------------+
 |     Bezeichnung      |                                                                             |
 +======================+=============================================================================+
-| Ziel                 | Die Abschlussarbeiten einsehen                             |
+| Ziel                 | Die Abschlussarbeiten einsehen                                              |
 +----------------------+-----------------------------------------------------------------------------+
 | Akteure              | Prüfungsausschuss                                                           |
 +----------------------+-----------------------------------------------------------------------------+
@@ -456,7 +453,7 @@ TODO: wechseln auf Mitarbeiter? siehe letzte Übung
 +----------------------+-----------------------------------------------------------------------------+
 | Auslösendes Ereignis | Prüfer einer Absolventenarbeit sollen kontrolliert werden                   |
 +----------------------+-----------------------------------------------------------------------------+
-| Vorbedingung         |  Informationen zu Absolventenarbeit vorhanden                               |
+| Vorbedingung         | Informationen zu Absolventenarbeit vorhanden                                |
 +----------------------+-----------------------------------------------------------------------------+
 | Nachbedingung        |                                                                             |
 +----------------------+-----------------------------------------------------------------------------+
@@ -478,7 +475,7 @@ TODO: wechseln auf Mitarbeiter? siehe letzte Übung
 +----------------------+-----------------------------------------------------------------------------+
 | Auslösendes Ereignis | Absolvent meldet sich zum ersten mal an                                     |
 +----------------------+-----------------------------------------------------------------------------+
-| Vorbedingung         |  Absolventendaten importiert                                                |
+| Vorbedingung         | Absolventendaten-Schnittstelle ist vorhanden                                |
 +----------------------+-----------------------------------------------------------------------------+
 | Nachbedingung        | Der Absolvent hat ein Passwort hinterlegt                                   |
 +----------------------+-----------------------------------------------------------------------------+
@@ -555,23 +552,19 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 
 ## Datenbasis
 
-TODO: externer datensatz auch? 
-
-Beschreiben Sie die fachlichen Anforderungen an die Struktur der Datenbasis. Gehen Sie dabei von der Datenbeschreibung aus, die Sie bei der Function-Point-Analyse erstellt haben. Verwenden Sie UML-Klassendiagramme und beschreiben Sie die einzelnen Klassen in folgender Form:
-
 :(feier)\: Zusammenstellung Attribute
 
-+----------+-------+------------------------------------------------------------+
-| Attribut |  Typ  |     Beschreibung                                           |
-+==========+=======+============================================================+
-| name   | string | Der Name der Feier                                        |
-+----------+-------+------------------------------------------------------------+
-| datum   | date | das Datum der Feier                                      |
-+----------+-------+------------------------------------------------------------+
-| uhrzeit   | time | der Zeitpunkt der Feier                                        |
-+----------+-------+------------------------------------------------------------+
-| ort   | string | Der Standort der Veranstaltung                                        |
-+----------+-------+------------------------------------------------------------+
++----------+--------+------------------------------------------------------------+
+| Attribut |  Typ   |     Beschreibung                                           |
++==========+========+============================================================+
+| name     | string | Der Name der Absolventenfeier                              |
++----------+--------+------------------------------------------------------------+
+| datum    | date   | Das Datum der Absolventenfeier                             |
++----------+--------+------------------------------------------------------------+
+| uhrzeit  | time   | Der Uhrzeit der Absolventenfeier                           |
++----------+--------+------------------------------------------------------------+
+| ort      | string | Der Standort der Absolventenfeier                          |
++----------+--------+------------------------------------------------------------+
 
 &nbsp;
 
@@ -585,21 +578,23 @@ Beschreiben Sie die fachlichen Anforderungen an die Struktur der Datenbasis. Geh
 
 :(absolventen_in)\: Zusammenstellung Attribute
 
-+----------+-------+------------------------------------------------------------+
-| Attribut |  Typ  |     Beschreibung                                           |
-+==========+=======+============================================================+
-| absolventen_ex   | number | ID des externen Datensatzes, der zu diesen Zusatzinformationen gehört                                      |
-+----------+-------+------------------------------------------------------------+
-| passwort   | string | Passwort zur Anmeldung im ASF, Leerstring wenn noch nicht erstellt                           |
-+----------+-------+------------------------------------------------------------+
-| teilnahmestatus   | boolean | Teilnahmestatus, ob Teilnahme bestätigt                                      |
-+----------+-------+------------------------------------------------------------+
-| anzahlBegleitperson   | number | Anzahl der Begleitpersonen des Absolventen                                   |
-+----------+-------+------------------------------------------------------------+
++---------------------+---------+------------------------------------------------------------+
+| Attribut            |  Typ    |     Beschreibung                                           |
++=====================+=========+============================================================+
+| absolventen_ex      | number  | ID des externen Datensatzes, der zu diesen                 |
+|                     |         | Zusatzinformationen gehört                                 |
++---------------------+---------+------------------------------------------------------------+
+| passwort            | string  | Passwort zur Anmeldung im ASF, Leerstring wenn noch        |
+|                     |         | nicht erstellt                                             |
++---------------------+---------+------------------------------------------------------------+
+| teilnahmestatus     | boolean | Teilnahmestatus, ob Teilnahme bestätigt                    |
++---------------------+---------+------------------------------------------------------------+
+| anzahlBegleitperson | number  | Anzahl der Begleitpersonen des Absolventen                 |
++---------------------+---------+------------------------------------------------------------+
 
 &nbsp;
 
-:(klasse )\: Zusammenstellung Methoden
+:(absolventen_in)\: Zusammenstellung Methoden
 
 +----------+------------+------------------------------------------------------------+
 | Methode  |  Signatur  |     Beschreibung                                           |
@@ -609,19 +604,19 @@ Beschreiben Sie die fachlichen Anforderungen an die Struktur der Datenbasis. Geh
 
 :(mitarbeiter)\: Zusammenstellung Attribute
 
-+----------+-------+------------------------------------------------------------+
-| Attribut |  Typ  |     Beschreibung                                           |
-+==========+=======+============================================================+
-| name   | string | Nachname des Mitarbeiters                                        |
-+----------+-------+------------------------------------------------------------+
-| vorname   | string | Vorname des Mitarbeiters                                        |
-+----------+-------+------------------------------------------------------------+
-| email   | string | Email des Mitarbeiters                                       |
-+----------+-------+------------------------------------------------------------+
++----------+--------+------------------------------------------------------------+
+| Attribut |  Typ   |     Beschreibung                                           |
++==========+========+============================================================+
+| name     | string | Nachname des Mitarbeiters                                  |
++----------+--------+------------------------------------------------------------+
+| vorname  | string | Vorname des Mitarbeiters                                   |
++----------+--------+------------------------------------------------------------+
+| email    | string | E-Mail des Mitarbeiters                                    |
++----------+--------+------------------------------------------------------------+
 
 &nbsp;
 
-:(klasse )\: Zusammenstellung Methoden
+:(mitarbeiter)\: Zusammenstellung Methoden
 
 +----------+------------+------------------------------------------------------------+
 | Methode  |  Signatur  |     Beschreibung                                           |
@@ -631,21 +626,21 @@ Beschreiben Sie die fachlichen Anforderungen an die Struktur der Datenbasis. Geh
 
 :(zugangsdaten)\: Zusammenstellung Attribute
 
-+----------+-------+------------------------------------------------------------+
-| Attribut |  Typ  |     Beschreibung                                           |
-+==========+=======+============================================================+
-| name   | string | Nachname des Prüfungsausschussmitglieds                                        |
-+----------+-------+------------------------------------------------------------+
-| vorname   | string | Vorname des Prüfungsausschussmitglieds                                         |
-+----------+-------+------------------------------------------------------------+
-| email   | string | Email des Prüfungsausschussmitglieds                                        |
-+----------+-------+------------------------------------------------------------+
-| passwort   | string | Passwort des Prüfungsausschussmitglieds                                         |
-+----------+-------+------------------------------------------------------------+
++----------+--------+------------------------------------------------------------+
+| Attribut |  Typ   |     Beschreibung                                           |
++==========+========+============================================================+
+| name     | string | Nachname des Prüfungsausschussmitglieds                    |
++----------+--------+------------------------------------------------------------+
+| vorname  | string | Vorname des Prüfungsausschussmitglieds                     |
++----------+--------+------------------------------------------------------------+
+| email    | string | E-Mail des Prüfungsausschussmitglieds                      |
++----------+--------+------------------------------------------------------------+
+| passwort | string | Passwort des Prüfungsausschussmitglieds                    |
++----------+--------+------------------------------------------------------------+
 
 &nbsp;
 
-:(klasse )\: Zusammenstellung Methoden
+:(zugangsdaten)\: Zusammenstellung Methoden
 
 +----------+------------+------------------------------------------------------------+
 | Methode  |  Signatur  |     Beschreibung                                           |
@@ -653,25 +648,34 @@ Beschreiben Sie die fachlichen Anforderungen an die Struktur der Datenbasis. Geh
 | (name)   | (signatur) | beschreibender Text                                        |
 +----------+------------+------------------------------------------------------------+
 
-:(klasse )\: Zusammenstellung Attribute
+:(absolventen_ex)\: Zusammenstellung Attribute
 
-+----------+-------+------------------------------------------------------------+
-| Attribut |  Typ  |     Beschreibung                                           |
-+==========+=======+============================================================+
-| (name)   | (typ) | beschreibender Text                                        |
-+----------+-------+------------------------------------------------------------+
-
++--------------+--------+------------------------------------------------------------+
+| Attribut     |  Typ   |     Beschreibung                                           |
++==============+========+============================================================+
+| name         | string | Nachname des Absolventens                                  |
++--------------+--------+------------------------------------------------------------+
+| vorname      | string | Vorname des Absolventens                                   |
++--------------+--------+------------------------------------------------------------+
+| email        | string | E-Mail des Absolventens                                    |
++--------------+--------+------------------------------------------------------------+
+| arbeitstitel | string | Titel der Abschlussarbeit                                  |
++--------------+--------+------------------------------------------------------------+
+| arbeitstyp   | string | Passwort des Prüfungsausschussmitglieds                    |
++--------------+--------+------------------------------------------------------------+
+| pruefer1     | string | Name des ersten Prüfers                                    |
++--------------+--------+------------------------------------------------------------+
+| pruefer2     | string | Name des zewiten Prüfers                                   |
++--------------+--------+------------------------------------------------------------+
 &nbsp;
 
-:(klasse )\: Zusammenstellung Methoden
+:(absolventen_ex)\: Zusammenstellung Methoden
 
 +----------+------------+------------------------------------------------------------+
 | Methode  |  Signatur  |     Beschreibung                                           |
 +==========+============+============================================================+
 | (name)   | (signatur) | beschreibender Text                                        |
 +----------+------------+------------------------------------------------------------+
-
-Ersetzen Sie die Platzhalter durch sinnvolle Angaben. Achten Sie bei der Benennung der Klassen auf Konsistenz zum Klassendiagramm. Geben Sie die Signaturen in Form einer Aufzählung von Parametern (Name und Typ) an, soweit das möglich und sinnvoll ist.
 
 ## Sonstige Anforderungen
 
@@ -681,13 +685,58 @@ Geben Sie hier fachliche Anforderungen an, die Sie keiner der zuvor genannten Ru
 
 ## Architektur
 
-Beschreiben Sie bereits bekannte Anforderungen an die Architektur der Anwendung (ergibt sich z.B. aus der Anforderung "Web-Anwendung").
+Das Absolventenfeiersystem (AFS) wird als Webanwendung realisiert und nutz als Datenspeicher eine NoSQL-Datenbank.
+Daraus ergibt sich die folgende Architektur.
+
+Nutzende (Absolvent, Mitarbeiter und Mitglieder des Prüfungsausschus) bekommen ein Benutzerschnittstelle,
+welche vom genutzten Webbrowser gerendert wird, präsentiert. Diese stellt teilweise Daten,
+abhängig der Rolle des Akteur, aus dem Datenspeicher dar. Über diese Benutzerschnittstelle ist es möglich Daten des
+Datenbestandes zu manipulieren. 
 
 ## Leistungsanforderungen
 
-Beschreiben Sie Leistungsanforderungen, z.B.
+Folgende Leistungsanforderungen werden an die beschrieben Anwendung gestellt:
 
-- maximale Reaktionszeiten
-- Transaktionsraten: wieviele gleichzeitige Benutzer nehmen Sie an
-- voraussichtlicher Speicherbedarf (persistent): berechnen Sie diesen aus einer Abschätzung des Umfangs der Daten.
+- maximale Reaktionszeit: Der Nutzer muss innerhalb von 3 Sekunden eine Bestätigung seiner Anfrage erhalten. 
+Diese Bestätigung stellt keine Meldung über den (Miss-)Erfolg seiner Anfrage dar. Eine (Miss-)Erfolgsmeldung
+muss innerhalb von 30 Sekunden erfolgen, sodass die Anfrage des Nutzers in max. 30 Sekunden abgearbeitet werden muss.
+- Transaktionsrate: Die Anwendung sollte 30 gleichzeitige Benutzer zu lassen, um eventuelle Spitzen abfangen zukönnen.
+In der Regel ist zu erwarten, dass bis zu 5 Nutzer die Anwendung gleichzeitig nutzen wollen.
+- Verfügbarkeit: Da es sich um eine unkritische Anwendung handelt ist SLA Level von 85% ausreichend
+(Downtime: 1 Tag in der Woche, 5 Tage im Monat)
+- voraussichtlicher Speicherbedarf (persistent):
 
+Angewendete Formeln
+```
+Speicherbedarf = Speicherbedarf_Feier + Speicherbedarf_Absolventen_in + Speicherbedarf_Mitarbeiter + Speicherbedarf_Zugangsdaten
+
+Speicherbedarf_Feier = (256 Bytes + 3 Bytes + 4 Bytes + 256 Bytes) * Anzahl gespeicherter Feieren
+                     = 519 Bytes * Anzahl gespeicherte Feieren
+
+Speicherbedarf_Absolventen_in = (4 Bytes + 256 Bytes + 1 Byte + 2 Bytes) * Anzahl gespeicherter Absolventen
+                              = 263 Bytes * Anzhal gespeicherter Absolventen
+
+Speicherbedarf_Mitarbeiter = (256 Bytes + 256 Bytes + 256 Bytes) * Anzahl gespeicherter Mitarbeiter
+                           = 768 Bytes * Anzahl gespeicherter Mitarbeiter
+
+Speicherbedarf_Zugangsdaten = (256 Bytes + 256 Bytes + 256 Bytes + 256 Bytes) * Anzahl gespeicherter Zugangsdaten
+                            = 1024 * Anzhal gespeicherter Zugangsdaten
+
+Hinweise: Genutze Spezifikationen der Datentypen - Vorlage SQL Datenbank
+https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.1.0/com.ibm.db2.luw.sql.ref.doc/doc/r0008474.html
+```
+
+Benötigter Speicherplatz:
+```
+Speicherbedarf_Feier = 519 Bytes * 1 = 519 Bytes
+Speicherbedarf_Absolventen_in = 263 Bytes * 60 = 15.780 Bytes
+Speicherbedarf_Mitarbeiter = 768 Bytes * 30 = 23.040 Bytes
+Speicherbedarf_Zugangsdaten = 1024 Bytes * 10 =10.240 Bytes
+
+Speicherbedarf = 519 Bytes + 15.780 Bytes + 23.040 Bytes + 10.240 Bytes = 49.579 Bytes ~ 50.000 Bytes = 50 Kilobyte
+```
+Achtung: Hierbei handelt es sich um eine grobe Abschätzung des Speicherbedarfs. Es kommt auf die genutzte NoSQL-Datenbank,
+sowie auf die verwendeten Datenstrukturen/-typen an.
+
+Bei der Abschätzung haben sich 60 Absolventen und 30 Mitarbeiter für die Absolventenfeier angemeldet und Mitglieder 
+des Prüfungsausschusses sind am ASF registriert.
