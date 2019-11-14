@@ -270,9 +270,8 @@ Definieren Sie die Anforderungen die Funktionalität des Produkts.
 
 ## Anwendungsfälle
 
-Beschreiben Sie die Anwendungsfälle mit UML-Anwendungsfalldiagrammen und geben Sie dabei für jeden Anwendungsfall eine Beschreibung an. Ergänzen Sie die Beschreibung der Anwendungsfälle ggf. durch die Definition von Arbeitsflüssen (Workflows) und / oder der Beschreibung dynamischer Aspekte.
+![UML-Diagramm für Absolventenfeiersystem](use-cases-umlet.png "use-case")
 
-Geben Sie für jeden Fall eine Beschreibung in folgender Form an:
 
 :(Teilnahme Bekunden) 
 
