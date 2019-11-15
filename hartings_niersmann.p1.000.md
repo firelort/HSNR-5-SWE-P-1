@@ -278,9 +278,7 @@ wird ein Netzwerk-Adapter benötigt.
 
 ## Anwendungsfälle
 
-![UML-Diagramm für Absolventenfeiersystem](use-cases-umlet.png "use-case")
-[1] UML-Usecase Diagramm für das Absolventenfeiersystem
-
+![[1] UML-Diagramm für Absolventenfeiersystem](use-cases-umlet.png "use-case")
 
 :(Teilnahme Bekunden) 
 
@@ -563,10 +561,7 @@ wird ein Netzwerk-Adapter benötigt.
 
 ## Datenbasis
 
-![UML-Klassendiagramm für Absolventenfeiersystem](classes-umlet.png "classes")
-
-[2] UML-Klassendiagramm für das Absolventenfeiersystem
-
+![[2] UML-Klassendiagramm für Absolventenfeiersystem](classes-umlet.png "classes")
 
 :(feier)\: Zusammenstellung Attribute
 
@@ -779,7 +774,7 @@ sowie auf die verwendeten Datenstrukturen/-typen an.
 Bei der Abschätzung haben sich 60 Absolventen und 30 Mitarbeiter für die Absolventenfeier angemeldet und Mitglieder 
 des Prüfungsausschusses sind am ASF registriert.
 
-# Quellenverzeichnis
+# Bildverzeichnis
 
 [1] use-cases-umlet.jpg
 
