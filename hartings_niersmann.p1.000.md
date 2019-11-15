@@ -23,25 +23,30 @@ cssextra: vorlage.css
 ### Ausgaben
 
 Prüfungsausschuss:
+
 * Teilnehmerliste der Absolventen
 * Teilnehmerliste der Mitarbeiter
 * Auflistung der Abschlussarbeiten
 * Prüfer des Studenten
 
 Alle: 
+
 * Informationen der Absolventenfeier 
 
 ### Eingaben
 
 Absolventen:
+
 * Passwort setzen
 * Teilnahmestatus ändern 
 * Anzahl der Begleitpersonen ändern
 
 Mitarbeiter:
+
 * Teilnahme bekunden
 
 Prüfungsausschuss:
+
 * Registrierung am ASF
 * Absolventenfeier anlegen
 * Absolventenfeier bearbeiten
@@ -145,7 +150,6 @@ und die Summe der Datenfelder zwischen 5 und 15 liegt.
 +--------------------------------+-----------------------------+
 | Systemmerkmal                  |   Gewichtung                |
 +================================+=============================+
-+--------------------------------+-----------------------------+
 | 1.  Datenkommunikation         |                 5           |
 +--------------------------------+-----------------------------+
 | 2.  Verteilte Verarbeitung     |                 0           |
