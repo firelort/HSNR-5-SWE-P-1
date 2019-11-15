@@ -293,23 +293,24 @@ Da eine Verbindung zum Intranet der Hochschule benötigt wird und die Anwendung 
 
 
 :(am AFS registrieren) 
+
 +----------------------+-----------------------------------------------------------------------------+
 |     Bezeichnung      |                                                                             |
 +======================+=============================================================================+
 | Ziel                 | Prüfungsausschuss meldet sich zum Backend des AFS an                        |
 +----------------------+-----------------------------------------------------------------------------+
-| Akteure              | Prüfungsausschuss                                                           |
+| Akteure              | Mitarbeiter                                                                 |
 +----------------------+-----------------------------------------------------------------------------+
 | Auslösendes Ereignis | Prüfungsausschuss möchte das Backend benutzen können                        |
 +----------------------+-----------------------------------------------------------------------------+
 | Vorbedingung         |                                                                             |
 +----------------------+-----------------------------------------------------------------------------+
-| Nachbedingung        | Neues Prüfungsausschussmitglied registirert                                 |
+| Nachbedingung        | Neues Prüfungsausschussmitglied ist im AFS registirert                      |
 +----------------------+-----------------------------------------------------------------------------+
 | Kategorie            | sekundär                                                                    |
 +----------------------+-----------------------------------------------------------------------------+
-| Beschreibung         |  Ein Mirarbeiter registriert sich um zum Prüfungsausschuss zu gehören, um   |
-|                      |  dann das Backend nutzen zu können                                          |
+| Beschreibung         | Ein Mirarbeiter (Mitglied des Prüfungsausschuss) registriert sich, um das   |
+|                      | Backend des AFS nutzen zu können                                            |
 +----------------------+-----------------------------------------------------------------------------+
 
 
@@ -318,19 +319,20 @@ Da eine Verbindung zum Intranet der Hochschule benötigt wird und die Anwendung 
 +----------------------+-----------------------------------------------------------------------------+
 |     Bezeichnung      |                                                                             |
 +======================+=============================================================================+
-| Ziel                 | Prüfungsauschuss wird im AFS authentifiziert                                |
+| Ziel                 | Mitglied des Prüfungsauschuss wird im AFS authentifiziert                   |
 +----------------------+-----------------------------------------------------------------------------+
-| Akteure              | Prüfungsausschuss                                                           |
+| Akteure              | Mitarbeiter                                                                 |
 +----------------------+-----------------------------------------------------------------------------+
-| Auslösendes Ereignis | Prüfungsausschuss möchte das Backend benutzen                               |
+| Auslösendes Ereignis | Ein Mitglied des Prüfungsausschuss möchte das Backend benutzen              |
 +----------------------+-----------------------------------------------------------------------------+
-| Vorbedingung         | Im AFS registriert sein                                                     |
+| Vorbedingung         | Mitglied des Prüfungsausschuss ist im AFS registriert                       |
 +----------------------+-----------------------------------------------------------------------------+
 | Nachbedingung        |                                                                             |
 +----------------------+-----------------------------------------------------------------------------+
 | Kategorie            | primär                                                                      |
 +----------------------+-----------------------------------------------------------------------------+
-| Beschreibung         | Prüfungsamt wird im AFS angemeldet und kann das Backend benutzen            |
+| Beschreibung         | Mitglied des Prüfungsausschuss wird im AFS angemeldet und kann das Backend  |
+|                      | benutzen                                                                    |
 +----------------------+-----------------------------------------------------------------------------+
 
 
@@ -561,7 +563,7 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 +----------+--------+------------------------------------------------------------+
 | datum    | date   | Das Datum der Absolventenfeier                             |
 +----------+--------+------------------------------------------------------------+
-| uhrzeit  | time   | Der Uhrzeit der Absolventenfeier                           |
+| uhrzeit  | time   | Die Uhrzeit der Absolventenfeier                           |
 +----------+--------+------------------------------------------------------------+
 | ort      | string | Der Standort der Absolventenfeier                          |
 +----------+--------+------------------------------------------------------------+
