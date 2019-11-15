@@ -59,7 +59,8 @@ Prüfungsausschuss:
 
 * Absolventenliste vom Prüfungsamt
 
-Diese Daten beinhalten den Namen, den Vornamen, die E-Mail sowie Informationen zur Abschlussarbeit (Titel, Art und Prüfer).
+Diese Daten beinhalten den Namen, den Vornamen, 
+die E-Mail sowie Informationen zur Abschlussarbeit (Titel, Art und Prüfer).
 
 ### Data Dictionary
 
@@ -130,7 +131,8 @@ anzahlBegleitperson ::= number;
 | Summe                 |  16    |                |            |  75  |
 +-----------------------+--------+----------------+------------+------+
 
-Ausgabe mittel: `Teilnehmerlist der Absolventen`, da dort auf zwei Datenbestände zugegriffen wird und die Summe der Datenfelder zwischen 5 und 15 liegt.
+Ausgabe mittel: `Teilnehmerlist der Absolventen`, da dort auf zwei Datenbestände zugegriffen wird 
+und die Summe der Datenfelder zwischen 5 und 15 liegt.
 
 ## Berechnung der bewerteten FP
 
@@ -215,14 +217,17 @@ Das Projekt sollte von zwei Personen in 1.5 Monaten durchgeführt werden.
 # Zielbestimmung
 
 Der Prüfungsausschuss soll mit Hilfe der beschrieben Anwendung die Absolventenfeier verwalten können.
-Die Mitglieder des Prüfungsausschuss können die Informationen der Abschlussfeier (ein-)pflegen sowie eine aktuelle Teilnehmerliste abrufen
-Mitarbeitern des Fachbereichs und Absolventen können sich über die hier beschriebene Anwendung zur Absolventenfeier anmelden.
+Die Mitglieder des Prüfungsausschuss können die Informationen der Abschlussfeier (ein-)pflegen
+sowie eine aktuelle Teilnehmerliste abrufen
+Mitarbeitern des Fachbereichs und Absolventen können sich über die hier beschriebene Anwendung
+zur Absolventenfeier anmelden.
 
 # Produkt-Einsatz    
 
 ## Anwendungsbereiche
 
-Die beschriebene software Lösung soll im Universitätsumfeld genutzt werden um eine Verwaltung von Absolventenfeiern zu ermöglichen.
+Die beschriebene software Lösung soll im Universitätsumfeld genutzt werden um eine Verwaltung
+von Absolventenfeiern zu ermöglichen.
 
 ## Zielgruppen
 
@@ -234,24 +239,29 @@ Die Absolventen geben an, ob und mit wie vielen Begleitpersonen diese an der Abs
 
 #### 2. Mitarbeiter des Fachbereichs
 
-Zu den Mitarbeitern des Fachbereichs zählen neben den Professoren auch alle anderen Angestellten, welche am Fachbereich tätig sind.
-Diese können sich mit Hilfe der Anwendung auch an der Absolventenfeier anmelden.
+Zu den Mitarbeitern des Fachbereichs zählen neben den Professoren auch alle anderen Angestellten,
+welche am Fachbereich tätig sind. Diese können sich mit Hilfe der Anwendung auch an der Absolventenfeier anmelden.
 
 #### 3. Mitglieder des Prüfungsausschuss
 
-Die gewählten Mitglieder des Prüfungsausschusses stehen die selben Funktionen zur Verfügung, wie den Mitarbeitern des Fachbereichs.
-Ihr Handlungsspielraum wird ergänzt durch die Möglichkeiten der Organisation der Absolventenfeier sowie einer Ausgabe von angemeldeten Gästen und eine Aufstellung der Bachelorarbeiten.
+Die gewählten Mitglieder des Prüfungsausschusses stehen die selben Funktionen zur Verfügung,
+wie den Mitarbeitern des Fachbereichs. Ihr Handlungsspielraum wird ergänzt durch die Möglichkeiten
+der Organisation der Absolventenfeier sowie einer Ausgabe von angemeldeten Gästen
+und eine Aufstellung der Bachelorarbeiten.
 
 ## Betriebsbedingungen
 
 Die Anwendung soll (nur) im Intranet der Hochschule Niederrhein genutzt werden.
-Damit die Anwendung ordnungsgemäß arbeiten kann, benötigt die beschriebene Anwendung die externen Daten des Prüfungsamtes.
+Damit die Anwendung ordnungsgemäß arbeiten kann, benötigt die beschriebene Anwendung die externen Daten
+des Prüfungsamtes.
 
-Diese Daten müssen den Namen, den Vorname, die E-Mail-Adresse, den Titel der Arbeit, den Typ der Abschlussarbeit sowie den Erst- und Zweitprüfer enthalten. 
+Diese Daten müssen den Namen, den Vorname, die E-Mail-Adresse, den Titel der Arbeit,
+den Typ der Abschlussarbeit sowie den Erst- und Zweitprüfer enthalten. 
 
 # Produkt-Umgebung
 
-Die Anwendung benötigt eine Schnittstelle zu dem Datenbestand des Prüfungsamtes um so den externen Dantenbestand zu erhalten.
+Die Anwendung benötigt eine Schnittstelle zu dem Datenbestand des Prüfungsamtes um
+so den externen Dantenbestand zu erhalten.
 
 ## Software
 
@@ -261,7 +271,8 @@ Es wird ein Webserver benötigt sowie eine NoSQL-Datenbank-Software.
 
 Zum Betreiben der Anwendung wird keine spezielle Hardware benötigt.
 
-Da eine Verbindung zum Intranet der Hochschule benötigt wird und die Anwendung auf externe Daten zugreift, wird ein Netzwerk-Adapter benötigt.
+Da eine Verbindung zum Intranet der Hochschule benötigt wird und die Anwendung auf externe Daten zugreift,
+wird ein Netzwerk-Adapter benötigt.
 
 # Funktionale Produkt-Anforderungen
 
@@ -572,11 +583,19 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 
 :(feier)\: Zusammenstellung Methoden
 
-+----------+------------+------------------------------------------------------------+
-| Methode  |  Signatur  |     Beschreibung                                           |
-+==========+============+============================================================+
-| (name)   | (signatur) | beschreibender Text                                        |
-+----------+------------+------------------------------------------------------------+
++-------------+--------------------+------------------------------------------------+
+| Methode     |  Signatur          |     Beschreibung                               |
++=============+====================+================================================+
+| setName     | string newName     | Setzt den neuen Namen der Absolventenfeier     |
++-------------+--------------------+------------------------------------------------+
+| setDate     | date newDate       | Setzt das neue Datum der Absolventenfeier      |
++-------------+--------------------+------------------------------------------------+
+| setTime     | time newTime       | Setzt die neue Zeit der Absolventenfeier       |
++-------------+--------------------+------------------------------------------------+
+| setLocation | string newLocation | Setzt den neuen Ort der Absolventenfeier       |
++-------------+--------------------+------------------------------------------------+
+| getInfos    |                    | Gibt Informationen der Absolventenfeier zurück |
++-------------+--------------------+------------------------------------------------+
 
 :(absolventen_in)\: Zusammenstellung Attribute
 
@@ -598,11 +617,15 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 
 :(absolventen_in)\: Zusammenstellung Methoden
 
-+----------+------------+------------------------------------------------------------+
-| Methode  |  Signatur  |     Beschreibung                                           |
-+==========+============+============================================================+
-| (name)   | (signatur) | beschreibender Text                                        |
-+----------+------------+------------------------------------------------------------+
++-------------+----------------+------------------------------------------------------------+
+| Methode     |  Signatur      |     Beschreibung                                           |
++=============+================+============================================================+
+| setPassowrd | string pasword | Erzeugt einen neuen Eintrag und setzt das Passwort         |
++-------------+----------------+------------------------------------------------------------+
+| setStatus   | boolean status | Setzt den Teilnahmestatus des Absolventen                  |
++-------------+----------------+------------------------------------------------------------+
+| setCount    | number count   | Setzt die Anzahl an Begeleitpersonen                       |
++-------------+----------------+------------------------------------------------------------+
 
 :(mitarbeiter)\: Zusammenstellung Attribute
 
@@ -620,11 +643,13 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 
 :(mitarbeiter)\: Zusammenstellung Methoden
 
-+----------+------------+------------------------------------------------------------+
-| Methode  |  Signatur  |     Beschreibung                                           |
-+==========+============+============================================================+
-| (name)   | (signatur) | beschreibender Text                                        |
-+----------+------------+------------------------------------------------------------+
++----------+-------------------------------------------+---------------------------------------------------+
+| Methode  |  Signatur                                 |     Beschreibung                                  |
++==========+===========================================+===================================================+
+| anmelden | string name, string vorname, string email | Anmeldung eines Mitarbeiters zur Absolventenfeier |
++----------+-------------------------------------------+---------------------------------------------------+
+| getList  |                                           | Liste alle angemeldeten Mitarbeiter auf           |
++----------+-------------------------------------------+---------------------------------------------------+
 
 :(zugangsdaten)\: Zusammenstellung Attribute
 
@@ -644,11 +669,16 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 
 :(zugangsdaten)\: Zusammenstellung Methoden
 
-+----------+------------+------------------------------------------------------------+
-| Methode  |  Signatur  |     Beschreibung                                           |
-+==========+============+============================================================+
-| (name)   | (signatur) | beschreibender Text                                        |
-+----------+------------+------------------------------------------------------------+
++----------+----------------------------------+--------------------------------------+
+| Methode  |  Signatur                        |     Beschreibung                     |
++==========+==================================+======================================+
+| register | string name, string vorname,     | Registriert einen Mitglied des       |
+|          | string passwort, string passwort | Prüfungsausschuss am AFS             |
++----------+----------------------------------+--------------------------------------+
+| checkPW  | string passwort                  | Prüft das gegebene mit dem           |
+|          |                                  | hinterlegtem Passwort                |
++----------+----------------------------------+--------------------------------------+
+
 
 :(absolventen_ex)\: Zusammenstellung Attribute
 
@@ -669,15 +699,18 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 +--------------+--------+------------------------------------------------------------+
 | pruefer2     | string | Name des zewiten Prüfers                                   |
 +--------------+--------+------------------------------------------------------------+
+
 &nbsp;
 
 :(absolventen_ex)\: Zusammenstellung Methoden
 
-+----------+------------+------------------------------------------------------------+
-| Methode  |  Signatur  |     Beschreibung                                           |
-+==========+============+============================================================+
-| (name)   | (signatur) | beschreibender Text                                        |
-+----------+------------+------------------------------------------------------------+
++------------+--------------+------------------------------------------------------------+
+| Methode    |  Signatur    |     Beschreibung                                           |
++============+==============+============================================================+
+| getEntries | (signatur)   | Listet alle Einträge/Absolventen auf                       |
++------------+--------------+------------------------------------------------------------+
+| getEntry   | string email | Listet den Absolventen mit der gegeben E-Mail Adresse auf  |
++------------+--------------+------------------------------------------------------------+
 
 ## Sonstige Anforderungen
 
