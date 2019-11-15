@@ -87,7 +87,7 @@ arbeitstyp ::= [' Bachelor '|' Master '];
 pruefer1 ::= string;  * Professor *   
 pruefer2 ::= string;  * FB Mitarbeiter und != Pruefer1 *  
 
-passwort ::= string; * leer bei unregistreren Absolventen *  
+passwort ::= string; * leer bei unregistrierte Absolventen *  
 teilnehmerstatus ::= boolean; * Standard ist false *  
 anzahlBegleitperson ::= number;  
 ```
@@ -195,10 +195,10 @@ AFP = 0.87 * 75 = 65.25
 
 ## Ermittlung Personalaufwand, Bearbeitungsdauer, Kosten
 
-Formel zur Ermittlung des Personalaufwand:
+Formel zur Ermittlung des Personalaufwandes:
 ```
-Zur Abschätzung des Entwicklungsaufwands in Personenmonaten gibt es in der Literatur u.a. folgende Formel:
-- Aufwand (Personenmonate) = FP^1.4^ / 150
+Zur Abschätzung des Entwicklungsaufwands in Personenmonaten gibt es in der Literatur u. a. folgende Formel:
+Aufwand (Personenmonate) = FP^1.4^ / 150
 ```
 
 Aufwand in Personenmonate = `65.25^(1.4) / 150 = 2.166 ~ 3`
@@ -216,7 +216,7 @@ Das Projekt sollte von zwei Personen in 1.5 Monaten durchgeführt werden.
 
 # Zielbestimmung
 
-Der Prüfungsausschuss soll mit Hilfe der beschrieben Anwendung die Absolventenfeier verwalten können.
+Der Prüfungsausschuss soll mithilfe der beschriebenen Anwendung die Absolventenfeier verwalten können.
 Die Mitglieder des Prüfungsausschuss können die Informationen der Abschlussfeier (ein-)pflegen
 sowie eine aktuelle Teilnehmerliste abrufen
 Mitarbeitern des Fachbereichs und Absolventen können sich über die hier beschriebene Anwendung
@@ -226,8 +226,8 @@ zur Absolventenfeier anmelden.
 
 ## Anwendungsbereiche
 
-Die beschriebene software Lösung soll im Universitätsumfeld genutzt werden um eine Verwaltung
-von Absolventenfeiern zu ermöglichen.
+Die beschriebene Software Lösung soll im Universitätsumfeld genutzt werden,
+um eine Verwaltung von Absolventenfeiern zu ermöglichen.
 
 ## Zielgruppen
 
@@ -240,11 +240,11 @@ Die Absolventen geben an, ob und mit wie vielen Begleitpersonen diese an der Abs
 #### 2. Mitarbeiter des Fachbereichs
 
 Zu den Mitarbeitern des Fachbereichs zählen neben den Professoren auch alle anderen Angestellten,
-welche am Fachbereich tätig sind. Diese können sich mit Hilfe der Anwendung auch an der Absolventenfeier anmelden.
+welche am Fachbereich tätig sind. Diese können sich mithilfe der Anwendung auch an der Absolventenfeier anmelden.
 
 #### 3. Mitglieder des Prüfungsausschuss
 
-Die gewählten Mitglieder des Prüfungsausschusses stehen die selben Funktionen zur Verfügung,
+Die gewählten Mitglieder des Prüfungsausschusses stehen dieselben Funktionen zur Verfügung,
 wie den Mitarbeitern des Fachbereichs. Ihr Handlungsspielraum wird ergänzt durch die Möglichkeiten
 der Organisation der Absolventenfeier sowie einer Ausgabe von angemeldeten Gästen
 und eine Aufstellung der Bachelorarbeiten.
@@ -260,8 +260,8 @@ den Typ der Abschlussarbeit sowie den Erst- und Zweitprüfer enthalten.
 
 # Produkt-Umgebung
 
-Die Anwendung benötigt eine Schnittstelle zu dem Datenbestand des Prüfungsamtes um
-so den externen Dantenbestand zu erhalten.
+Die Anwendung benötigt eine Schnittstelle zu dem Datenbestand des Prüfungsamtes,
+um so den externen Dantenbestand zu erhalten.
 
 ## Software
 
@@ -316,11 +316,11 @@ wird ein Netzwerk-Adapter benötigt.
 +----------------------+-----------------------------------------------------------------------------+
 | Vorbedingung         |                                                                             |
 +----------------------+-----------------------------------------------------------------------------+
-| Nachbedingung        | Neues Prüfungsausschussmitglied ist im AFS registirert                      |
+| Nachbedingung        | Neues Prüfungsausschussmitglied ist im AFS registriert                      |
 +----------------------+-----------------------------------------------------------------------------+
 | Kategorie            | sekundär                                                                    |
 +----------------------+-----------------------------------------------------------------------------+
-| Beschreibung         | Ein Mirarbeiter (Mitglied des Prüfungsausschuss) registriert sich, um das   |
+| Beschreibung         | Ein Mitarbeiter (Mitglied des Prüfungsausschuss) registriert sich, um das   |
 |                      | Backend des AFS nutzen zu können                                            |
 +----------------------+-----------------------------------------------------------------------------+
 
@@ -330,7 +330,7 @@ wird ein Netzwerk-Adapter benötigt.
 +----------------------+-----------------------------------------------------------------------------+
 |     Bezeichnung      |                                                                             |
 +======================+=============================================================================+
-| Ziel                 | Mitglied des Prüfungsauschuss wird im AFS authentifiziert                   |
+| Ziel                 | Mitglied des Prüfungsausschuss wird im AFS authentifiziert                   |
 +----------------------+-----------------------------------------------------------------------------+
 | Akteure              | Mitarbeiter                                                                 |
 +----------------------+-----------------------------------------------------------------------------+
@@ -358,9 +358,9 @@ wird ein Netzwerk-Adapter benötigt.
 +----------------------+-----------------------------------------------------------------------------+
 | Auslösendes Ereignis | Eine neue Absolventenfeier findet statt und muss angelegt werden            |
 +----------------------+-----------------------------------------------------------------------------+
-| Vorbedingung         | im AFS als Prüfungsausschuss angemeldet                                     |
+| Vorbedingung         | Im AFS als Prüfungsausschuss angemeldet                                     |
 +----------------------+-----------------------------------------------------------------------------+
-| Nachbedingung        | neue Absolventenfeier angelegt                                              |
+| Nachbedingung        | Neue Absolventenfeier angelegt                                              |
 +----------------------+-----------------------------------------------------------------------------+
 | Kategorie            | primär                                                                      |
 +----------------------+-----------------------------------------------------------------------------+
@@ -381,7 +381,7 @@ wird ein Netzwerk-Adapter benötigt.
 +----------------------+-----------------------------------------------------------------------------+
 | Vorbedingung         | Absolventenfeier angelegt                                                   |
 +----------------------+-----------------------------------------------------------------------------+
-| Nachbedingung        | Die neuen Absolventenfeierdaten wurden übernommen                           |
+| Nachbedingung        | Die neuen Absolventenfeier Daten wurden übernommen                          |
 +----------------------+-----------------------------------------------------------------------------+
 | Kategorie            | sekundär                                                                    |
 +----------------------+-----------------------------------------------------------------------------+
@@ -394,19 +394,19 @@ wird ein Netzwerk-Adapter benötigt.
 +----------------------+-----------------------------------------------------------------------------+
 |     Bezeichnung      |                                                                             |
 +======================+=============================================================================+
-| Ziel                 | List einsehen der zur Absolventenfeier angemeldeten Mitarbeiter             |
+| Ziel                 | Liste einsehen der zur Absolventenfeier angemeldeten Mitarbeiter            |
 +----------------------+-----------------------------------------------------------------------------+
 | Akteure              | Prüfungsausschuss                                                           |
 +----------------------+-----------------------------------------------------------------------------+
 | Auslösendes Ereignis | Übersicht über an der Absolventenfeier angemeldete Mitarbeiter bekommen     |
 +----------------------+-----------------------------------------------------------------------------+
-| Vorbedingung         | im AFS als Prüfungsausschuss angemeldet                                     |
+| Vorbedingung         | Im AFS als Prüfungsausschuss angemeldet                                     |
 +----------------------+-----------------------------------------------------------------------------+
 | Nachbedingung        |                                                                             |
 +----------------------+-----------------------------------------------------------------------------+
 | Kategorie            | optional                                                                    |
 +----------------------+-----------------------------------------------------------------------------+
-| Beschreibung         | Die Mitarbeiter, die an der Absolventenfeier angemeldet sind werden         |
+| Beschreibung         | Die Mitarbeiter, die an der Absolventenfeier angemeldet sind werden,        |
 |                      | eingesehen                                                                  |
 +----------------------+-----------------------------------------------------------------------------+
 
@@ -416,43 +416,43 @@ wird ein Netzwerk-Adapter benötigt.
 +----------------------+-----------------------------------------------------------------------------+
 |     Bezeichnung      |                                                                             |
 +======================+=============================================================================+
-| Ziel                 | List einsehen der zur Absolventenfeier angemeldeten Absolventen             |
+| Ziel                 | Liste einsehen der zur Absolventenfeier angemeldeten Absolventen            |
 +----------------------+-----------------------------------------------------------------------------+
 | Akteure              | Prüfungsausschuss                                                           |
 +----------------------+-----------------------------------------------------------------------------+
 | Auslösendes Ereignis | Übersicht über an der Absolventenfeier angemeldete Absolventen bekommen     |
 +----------------------+-----------------------------------------------------------------------------+
-| Vorbedingung         | im AFS als Prüfungsausschuss angemeldet                                     |
+| Vorbedingung         | Im AFS als Prüfungsausschuss angemeldet                                     |
 +----------------------+-----------------------------------------------------------------------------+
 | Nachbedingung        |                                                                             |
 +----------------------+-----------------------------------------------------------------------------+
 | Kategorie            | sekundär                                                                    |
 +----------------------+-----------------------------------------------------------------------------+
-| Beschreibung         | Die Absolventen, die an der Absolventenfeier angemeldet sind werden         |
+| Beschreibung         | Die Absolventen, die an der Absolventenfeier angemeldet sind werden,        |
 |                      | eingesehen                                                                  |
 +----------------------+-----------------------------------------------------------------------------+
 
 
 :(Abschlussarbeiten anzeigen) 
 
-+----------------------+-----------------------------------------------------------------------------+
-|     Bezeichnung      |                                                                             |
-+======================+=============================================================================+
-| Ziel                 | Die Abschlussarbeiten einsehen                                              |
-+----------------------+-----------------------------------------------------------------------------+
-| Akteure              | Prüfungsausschuss                                                           |
-+----------------------+-----------------------------------------------------------------------------+
-| Auslösendes Ereignis | Die Liste der Abschlussarbeiten einsehen                                    |
-+----------------------+-----------------------------------------------------------------------------+
-| Vorbedingung         | Absolventen vorhanden                                                       |
-+----------------------+-----------------------------------------------------------------------------+
-| Nachbedingung        |                                                                             |
-+----------------------+-----------------------------------------------------------------------------+
-| Kategorie            | sekundär                                                                    |
-+----------------------+-----------------------------------------------------------------------------+
-| Beschreibung         | Die Abschlussarbeiten der Absolventen lassen sich einsehen nach vorgegebenen|
-|                      | Kriterien                                                                   |
-+----------------------+-----------------------------------------------------------------------------+
++----------------------+------------------------------------------------------------------------------+
+|     Bezeichnung      |                                                                              |
++======================+==============================================================================+
+| Ziel                 | Die Abschlussarbeiten einsehen                                               |
++----------------------+------------------------------------------------------------------------------+
+| Akteure              | Prüfungsausschuss                                                            |
++----------------------+------------------------------------------------------------------------------+
+| Auslösendes Ereignis | Die Liste der Abschlussarbeiten einsehen                                     |
++----------------------+------------------------------------------------------------------------------+
+| Vorbedingung         | Absolventen vorhanden                                                        |
++----------------------+------------------------------------------------------------------------------+
+| Nachbedingung        |                                                                              |
++----------------------+------------------------------------------------------------------------------+
+| Kategorie            | sekundär                                                                     |
++----------------------+------------------------------------------------------------------------------+
+| Beschreibung         | Die Abschlussarbeiten der Absolventen lassen sich einsehen nach vorgegebenen |
+|                      | Kriterien                                                                    |
++----------------------+------------------------------------------------------------------------------+
 
 
 :(Prüfer kontrollieren) 
@@ -460,19 +460,19 @@ wird ein Netzwerk-Adapter benötigt.
 +----------------------+-----------------------------------------------------------------------------+
 |     Bezeichnung      |                                                                             |
 +======================+=============================================================================+
-| Ziel                 | Prüfer einer Absolventenarbeit kontrollieren                                |
+| Ziel                 | Prüfer einer Absolventen Arbeit kontrollieren                               |
 +----------------------+-----------------------------------------------------------------------------+
 | Akteure              | Prüfungsausschuss                                                           |
 +----------------------+-----------------------------------------------------------------------------+
 | Auslösendes Ereignis | Prüfer einer Absolventenarbeit sollen kontrolliert werden                   |
 +----------------------+-----------------------------------------------------------------------------+
-| Vorbedingung         | Informationen zu Absolventenarbeit vorhanden                                |
+| Vorbedingung         | Informationen zu Absolventen Arbeit vorhanden                               |
 +----------------------+-----------------------------------------------------------------------------+
 | Nachbedingung        |                                                                             |
 +----------------------+-----------------------------------------------------------------------------+
 | Kategorie            | sekundär                                                                    |
 +----------------------+-----------------------------------------------------------------------------+
-| Beschreibung         | Die Prüfer einer Absolventenarbeit können kontrolliert, sprich eingesehen   |
+| Beschreibung         | Die Prüfer einer Absolventen Arbeit können kontrolliert, sprich eingesehen  |
 |                      | werden                                                                      |
 +----------------------+-----------------------------------------------------------------------------+
 
@@ -486,7 +486,7 @@ wird ein Netzwerk-Adapter benötigt.
 +----------------------+-----------------------------------------------------------------------------+
 | Akteure              | Absolvent                                                                   |
 +----------------------+-----------------------------------------------------------------------------+
-| Auslösendes Ereignis | Absolvent meldet sich zum ersten mal an                                     |
+| Auslösendes Ereignis | Absolvent meldet sich zum ersten Mal an                                     |
 +----------------------+-----------------------------------------------------------------------------+
 | Vorbedingung         | Absolventendaten-Schnittstelle ist vorhanden                                |
 +----------------------+-----------------------------------------------------------------------------+
@@ -507,7 +507,7 @@ wird ein Netzwerk-Adapter benötigt.
 +----------------------+-----------------------------------------------------------------------------+
 | Akteure              | Absolvent                                                                   |
 +----------------------+-----------------------------------------------------------------------------+
-| Auslösendes Ereignis | Der Absolvent möchte Änderungen and Daten seinen Daten vornehmen            |
+| Auslösendes Ereignis | Der Absolvent möchte Änderungen an seinen Daten vornehmen                   |
 +----------------------+-----------------------------------------------------------------------------+
 | Vorbedingung         | Passwort gesetzt                                                            |
 +----------------------+-----------------------------------------------------------------------------+
@@ -605,7 +605,7 @@ wird ein Netzwerk-Adapter benötigt.
 | absolventen_ex      | number  | ID des externen Datensatzes, der zu diesen                 |
 |                     |         | Zusatzinformationen gehört                                 |
 +---------------------+---------+------------------------------------------------------------+
-| passwort            | string  | Passwort zur Anmeldung im ASF, Leerstring wenn noch        |
+| passwort            | string  | Passwort zur Anmeldung im ASF - Leerstring, wenn noch      |
 |                     |         | nicht erstellt                                             |
 +---------------------+---------+------------------------------------------------------------+
 | teilnahmestatus     | boolean | Teilnahmestatus, ob Teilnahme bestätigt                    |
@@ -617,15 +617,15 @@ wird ein Netzwerk-Adapter benötigt.
 
 :(absolventen_in)\: Zusammenstellung Methoden
 
-+-------------+----------------+------------------------------------------------------------+
-| Methode     |  Signatur      |     Beschreibung                                           |
-+=============+================+============================================================+
-| setPassword | string password | Erzeugt einen neuen Eintrag und setzt das Passwort        |
-+-------------+----------------+------------------------------------------------------------+
-| setStatus   | boolean status | Setzt den Teilnahmestatus des Absolventen                  |
-+-------------+----------------+------------------------------------------------------------+
-| setCount    | number count   | Setzt die Anzahl an Begeleitpersonen                       |
-+-------------+----------------+------------------------------------------------------------+
++-------------+-----------------+------------------------------------------------------------+
+| Methode     |  Signatur       |     Beschreibung                                           |
++=============+=================+============================================================+
+| setPassword | string password | Erzeugt einen neuen Eintrag und setzt das Passwort         |
++-------------+-----------------+------------------------------------------------------------+
+| setStatus   | boolean status  | Setzt den Teilnahmestatus des Absolventen                  |
++-------------+-----------------+------------------------------------------------------------+
+| setCount    | number count    | Setzt die Anzahl an Begleitpersonen                        |
++-------------+-----------------+------------------------------------------------------------+
 
 :(mitarbeiter)\: Zusammenstellung Attribute
 
@@ -672,7 +672,7 @@ wird ein Netzwerk-Adapter benötigt.
 +----------+----------------------------------+--------------------------------------+
 | Methode  |  Signatur                        |     Beschreibung                     |
 +==========+==================================+======================================+
-| register | string name, string vorname,     | Registriert einen Mitglied des       |
+| register | string name, string vorname,     | Registriert ein Mitglied des         |
 |          | string email, string passwort    | Prüfungsausschuss am AFS             |
 +----------+----------------------------------+--------------------------------------+
 | checkPW  | string passwort                  | Prüft das gegebene mit dem           |
@@ -685,11 +685,11 @@ wird ein Netzwerk-Adapter benötigt.
 +--------------+--------+------------------------------------------------------------+
 | Attribut     |  Typ   |     Beschreibung                                           |
 +==============+========+============================================================+
-| name         | string | Nachname des Absolventens                                  |
+| name         | string | Nachname des Absolventen                                   |
 +--------------+--------+------------------------------------------------------------+
-| vorname      | string | Vorname des Absolventens                                   |
+| vorname      | string | Vorname des Absolventen                                    |
 +--------------+--------+------------------------------------------------------------+
-| email        | string | E-Mail des Absolventens                                    |
+| email        | string | E-Mail des Absolventen                                     |
 +--------------+--------+------------------------------------------------------------+
 | arbeitstitel | string | Titel der Abschlussarbeit                                  |
 +--------------+--------+------------------------------------------------------------+
@@ -697,7 +697,7 @@ wird ein Netzwerk-Adapter benötigt.
 +--------------+--------+------------------------------------------------------------+
 | pruefer1     | string | Name des ersten Prüfers                                    |
 +--------------+--------+------------------------------------------------------------+
-| pruefer2     | string | Name des zewiten Prüfers                                   |
+| pruefer2     | string | Name des zweiten Prüfers                                   |
 +--------------+--------+------------------------------------------------------------+
 
 &nbsp;
@@ -709,7 +709,7 @@ wird ein Netzwerk-Adapter benötigt.
 +============+==============+============================================================+
 | getEntries |              | Listet alle Einträge/Absolventen auf                       |
 +------------+--------------+------------------------------------------------------------+
-| getEntry   | string email | Listet den Absolventen mit der gegeben E-Mail Adresse auf  |
+| getEntry   | string email | Listet den Absolventen mit der gegeben E-Mail-Adresse auf  |
 +------------+--------------+------------------------------------------------------------+
 
 ## Sonstige Anforderungen
@@ -720,24 +720,24 @@ Geben Sie hier fachliche Anforderungen an, die Sie keiner der zuvor genannten Ru
 
 ## Architektur
 
-Das Absolventenfeiersystem (AFS) wird als Webanwendung realisiert und nutz als Datenspeicher eine NoSQL-Datenbank.
+Das Absolventenfeiersystem (AFS) wird als Webanwendung realisiert und nutzt als Datenspeicher eine NoSQL-Datenbank.
 Daraus ergibt sich die folgende Architektur.
 
-Nutzende (Absolvent, Mitarbeiter und Mitglieder des Prüfungsausschus) bekommen ein Benutzerschnittstelle,
+Nutzende (Absolvent, Mitarbeiter und Mitglieder des Prüfungsausschuss) bekommen eine Benutzerschnittstelle,
 welche vom genutzten Webbrowser gerendert wird, präsentiert. Diese stellt teilweise Daten,
-abhängig der Rolle des Akteur, aus dem Datenspeicher dar. Über diese Benutzerschnittstelle ist es möglich Daten des
+abhängig der Rolle des Akteurs, aus dem Datenspeicher dar. Über diese Benutzerschnittstelle ist es möglich Daten des
 Datenbestandes zu manipulieren. 
 
 ## Leistungsanforderungen
 
-Folgende Leistungsanforderungen werden an die beschrieben Anwendung gestellt:
+Folgende Leistungsanforderungen werden an die beschriebene Anwendung gestellt:
 
 - maximale Reaktionszeit: Der Nutzer muss innerhalb von 3 Sekunden eine Bestätigung seiner Anfrage erhalten. 
 Diese Bestätigung stellt keine Meldung über den (Miss-)Erfolg seiner Anfrage dar. Eine (Miss-)Erfolgsmeldung
 muss innerhalb von 30 Sekunden erfolgen, sodass die Anfrage des Nutzers in max. 30 Sekunden abgearbeitet werden muss.
-- Transaktionsrate: Die Anwendung sollte 30 gleichzeitige Benutzer zu lassen, um eventuelle Spitzen abfangen zukönnen.
+- Transaktionsrate: Die Anwendung sollte 30 gleichzeitige Benutzer zu lassen, um eventuelle Spitzen abfangen zu können.
 In der Regel ist zu erwarten, dass bis zu 5 Nutzer die Anwendung gleichzeitig nutzen wollen.
-- Verfügbarkeit: Da es sich um eine unkritische Anwendung handelt ist SLA Level von 85% ausreichend
+- Verfügbarkeit: Da es sich um eine unkritische Anwendung handelt, ist SLA Level von 85 % ausreichend
 (Downtime: 1 Tag in der Woche, 5 Tage im Monat)
 - voraussichtlicher Speicherbedarf (persistent):
 
@@ -755,9 +755,9 @@ Speicherbedarf_Mitarbeiter = (256 Bytes + 256 Bytes + 256 Bytes) * Anzahl gespei
                            = 768 Bytes * Anzahl gespeicherter Mitarbeiter
 
 Speicherbedarf_Zugangsdaten = (256 Bytes + 256 Bytes + 256 Bytes + 256 Bytes) * Anzahl gespeicherter Zugangsdaten
-                            = 1024 * Anzhal gespeicherter Zugangsdaten
+                            = 1024 * Anzahl gespeicherter Zugangsdaten
 
-Hinweise: Genutze Spezifikationen der Datentypen - Vorlage SQL Datenbank
+Hinweise: Genutzte Spezifikationen der Datentypen - Vorlage SQL Datenbank
 https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.1.0/com.ibm.db2.luw.sql.ref.doc/doc/r0008474.html
 ```
 
