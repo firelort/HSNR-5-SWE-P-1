@@ -1,7 +1,7 @@
 ---
 author:
-   name1: {Hartings, Robert, 1164453}
-   name2: {Niersmann, Alexander, 1164424}
+   name1: Hartings, Robert, 1164453
+   name2: Niersmann, Alexander, 1164424
 title:
    main: Software Engineering WS 2019/2020
    sub1: Praktikum Gruppe D
