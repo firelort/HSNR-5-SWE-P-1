@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>380</y>
+      <w>230</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>absolventen_in
+--
+-absolventen_ex: absolventen_ex
+-passwort: String
+-teilnahmestatus: Boolean
+-anzahlBegleitperson: Integer
+--
++setPassword(password: String)
++setStatus(status: Boolean)
++setCount(count: Integer)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>100</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>absolventen_ex
+--
+_-email: String_
+-name: String
+-vorname: String
+-email: String
+-arbeitstitel: String
+-arbeitstyp: String
+-pruefer1: String
+-pruefer2: String
+--
++getEntries(): Array
+_+getEntry(email: String): absolventen_ex_
+ 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>100</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>feier
+--
+_-datum: Date_
+-name: String
+-uhrzeit: Time
+-ort: String
+--
++setName(newName: String)
++setDate(newDate: Date)
++setTime(newTime: Time)
++setLocation(newLocation: String)
++getInfos(): Array
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>670</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>mitarbeiter
+--
+_-email: String_
+-name: String
+-vorname: String
+--
++anmelden(name: String, vorname: String, email: String): Boolean
++getList(): Array
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>660</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>zugangsdaten
+--
+_-email: String_
+-name: String
+-vorname: String
+-passwort: String
+--
++register(name: String, vorname: String, email: String, passwort: String): Boolean
++checkPW(passwort: String): Boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>280</y>
+      <w>190</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+nehmen teil an ^</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;200.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>280</y>
+      <w>310</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>280.0;10.0;280.0;250.0;10.0;250.0</additional_attributes>
+  </element>
+</diagram>

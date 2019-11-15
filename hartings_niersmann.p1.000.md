@@ -560,10 +560,10 @@ wird ein Netzwerk-Adapter benötigt.
 | Beschreibung         | Die Anzahl der Begleitpersonen wird vom Absolventen geändert                |
 +----------------------+-----------------------------------------------------------------------------+
 
-
-_(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschnittstelle verzichtet)_
-
 ## Datenbasis
+
+![UML-Klassendiagramm für Absolventenfeiersystem](classes-umlet.png "classes")
+
 
 :(feier)\: Zusammenstellung Attribute
 
@@ -620,7 +620,7 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 +-------------+----------------+------------------------------------------------------------+
 | Methode     |  Signatur      |     Beschreibung                                           |
 +=============+================+============================================================+
-| setPassowrd | string pasword | Erzeugt einen neuen Eintrag und setzt das Passwort         |
+| setPassword | string password | Erzeugt einen neuen Eintrag und setzt das Passwort        |
 +-------------+----------------+------------------------------------------------------------+
 | setStatus   | boolean status | Setzt den Teilnahmestatus des Absolventen                  |
 +-------------+----------------+------------------------------------------------------------+
@@ -673,7 +673,7 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 | Methode  |  Signatur                        |     Beschreibung                     |
 +==========+==================================+======================================+
 | register | string name, string vorname,     | Registriert einen Mitglied des       |
-|          | string passwort, string passwort | Prüfungsausschuss am AFS             |
+|          | string email, string passwort    | Prüfungsausschuss am AFS             |
 +----------+----------------------------------+--------------------------------------+
 | checkPW  | string passwort                  | Prüft das gegebene mit dem           |
 |          |                                  | hinterlegtem Passwort                |
@@ -707,7 +707,7 @@ _(Hinweis: zur Vereinfachung wird hier auf eine Beschreibung der Benutzungsschni
 +------------+--------------+------------------------------------------------------------+
 | Methode    |  Signatur    |     Beschreibung                                           |
 +============+==============+============================================================+
-| getEntries | (signatur)   | Listet alle Einträge/Absolventen auf                       |
+| getEntries |              | Listet alle Einträge/Absolventen auf                       |
 +------------+--------------+------------------------------------------------------------+
 | getEntry   | string email | Listet den Absolventen mit der gegeben E-Mail Adresse auf  |
 +------------+--------------+------------------------------------------------------------+
