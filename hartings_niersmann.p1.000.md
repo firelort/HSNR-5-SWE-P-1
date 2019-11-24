@@ -7,8 +7,8 @@ title:
    sub1: Praktikum Gruppe D
    sub2: Dokumentation Aufgabe 1
 revision:
-   doc: hartings_niersmann.p1.000.md
-   level: 0
+   doc: hartings_niersmann.p1.001.md
+   level: 1
    date: 11.11.2019
 lang: de
 cssextra: vorlage.css
@@ -78,7 +78,7 @@ absolventen_in ::= @absolvent_ex + passwort + teilnahmestatus + anzahlBegleitper
 
 mitarbeiter ::= name + vorname + #email;
 
-zugangsdaten ::= name + vorname + #email + passwort;
+mitgliedprüfungsausschuss ::= name + vorname + #email + passwort;
 
 name ::= string;  
 datum ::= date;  
@@ -565,7 +565,7 @@ wird ein Netzwerk-Adapter benötigt.
 
 ## Datenbasis
 
-![[2] UML-Klassendiagramm für Absolventenfeiersystem](classes-umlet.png "classes")
+![[2] UML-Klassendiagramm für Absolventenfeiersystem](classes-umlet-v2.png "classes")
 
 :(feier)\: Zusammenstellung Attribute
 
@@ -653,7 +653,7 @@ wird ein Netzwerk-Adapter benötigt.
 | getList  |                                           | Liste alle angemeldeten Mitarbeiter auf           |
 +----------+-------------------------------------------+---------------------------------------------------+
 
-:(zugangsdaten)\: Zusammenstellung Attribute
+:(mitgliedprüfungsausschuss)\: Zusammenstellung Attribute
 
 +----------+--------+------------------------------------------------------------+
 | Attribut |  Typ   |     Beschreibung                                           |
@@ -669,7 +669,7 @@ wird ein Netzwerk-Adapter benötigt.
 
 &nbsp;
 
-:(zugangsdaten)\: Zusammenstellung Methoden
+:(mitgliedprüfungsausschuss)\: Zusammenstellung Methoden
 
 +----------+----------------------------------+--------------------------------------+
 | Methode  |  Signatur                        |     Beschreibung                     |
@@ -756,7 +756,7 @@ Speicherbedarf_Absolventen_in = (4 Bytes + 256 Bytes + 1 Byte + 2 Bytes) * Anzah
 Speicherbedarf_Mitarbeiter = (256 Bytes + 256 Bytes + 256 Bytes) * Anzahl gespeicherter Mitarbeiter
                            = 768 Bytes * Anzahl gespeicherter Mitarbeiter
 
-Speicherbedarf_Zugangsdaten = (256 Bytes + 256 Bytes + 256 Bytes + 256 Bytes) * Anzahl gespeicherter Zugangsdaten
+Speicherbedarf_Mitglied_Prüfungsausschuss = (256 Bytes + 256 Bytes + 256 Bytes + 256 Bytes) * Anzahl gespeicherter Zugangsdaten
                             = 1024 * Anzahl gespeicherter Zugangsdaten
 
 Hinweise: Genutzte Spezifikationen der Datentypen - Vorlage SQL Datenbank
@@ -768,7 +768,7 @@ Benötigter Speicherplatz:
 Speicherbedarf_Feier = 519 Bytes * 1 = 519 Bytes
 Speicherbedarf_Absolventen_in = 263 Bytes * 60 = 15.780 Bytes
 Speicherbedarf_Mitarbeiter = 768 Bytes * 30 = 23.040 Bytes
-Speicherbedarf_Zugangsdaten = 1024 Bytes * 10 =10.240 Bytes
+Speicherbedarf_Mitglied_Prüfungsausschuss = 1024 Bytes * 10 =10.240 Bytes
 
 Speicherbedarf = 519 Bytes + 15.780 Bytes + 23.040 Bytes + 10.240 Bytes = 49.579 Bytes ~ 50.000 Bytes = 50 Kilobyte
 ```
@@ -780,6 +780,6 @@ des Prüfungsausschusses sind am ASF registriert.
 
 # Bildverzeichnis
 
-[1] use-cases-umlet.jpg
+[1] use-cases-umlet.png
 
-[2] classes-umlet.jpg
+[2] classes-umlet-v2.png
