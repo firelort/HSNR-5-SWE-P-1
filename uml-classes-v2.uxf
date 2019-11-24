@@ -42,7 +42,7 @@ _-email: String_
 --
 +anmelden(name: String, vorname: String, email: String): Boolean
 +getList(): Array
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>90</y><w>210</w><h>190</h></coordinates><panel_attributes>Mitglied Prüfungsausschuss
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>90</y><w>210</w><h>190</h></coordinates><panel_attributes>mitgliedprüfungsausschuss
 --
 _-email: String_
 -name: String
