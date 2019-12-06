@@ -8,7 +8,7 @@ title:
    sub2: Dokumentation Aufgabe 1
 revision:
    doc: hartings_niersmann.p1.001.md
-   level: 1
+   level: 2
    date: 11.11.2019
 lang: de
 cssextra: vorlage.css
