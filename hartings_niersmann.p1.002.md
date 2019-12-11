@@ -7,7 +7,7 @@ title:
    sub1: Praktikum Gruppe D
    sub2: Dokumentation Aufgabe 1
 revision:
-   doc: hartings_niersmann.p1.001.md
+   doc: hartings_niersmann.p1.002.md
    level: 2
    date: 11.11.2019
 lang: de
